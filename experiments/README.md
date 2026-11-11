@@ -33,7 +33,7 @@ streaming pass: exact L2 top-100 ground truth, exact Cov(u), and the codec stati
 `big_passB_slope.py <group> --alphas ...` and `big_s7_summary.py`; prefixes of the streams as datasets of their own (Section V-A):
 `big_stats.py pfx_sift1m pfx_sift10m pfx_msmarco1m` and the same passes, then `big_s3_summary.py`; encoding cost: `big_s6_cost.py`. The passes use the C kernels of `csrc/` (`make -C csrc`)
 through `pcafair/bigkern.py`. `big_validate.py` runs the large-dataset pipeline on audio and checks it against the ten-dataset
-results (`results/bigsets/validation/validate_audio.json`: the codecs agree to 1e-7, Recall@10 to 0.05 pp, the score error to 1e-4). Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
+results (`results/bigsets/validation/validate_audio.json`: the codec parameters agree to 1e-5 (the variances to 1e-9), Recall@10 to 0.05 pp, the score error to 1e-4). Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
 cached training samples.
 
 ## Conventions shared by all scripts
