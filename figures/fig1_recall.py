@@ -33,14 +33,14 @@ for ax, d in zip(axs, DS):
     for z, c, m, _ in ARMS:
         bs = [b for b in BUD if (z, b) in R[d]]; ys = [R[d][(z, b)] for b in bs]; vals += ys
         if not bs: continue
-        ax.plot(bs, ys, ('-' if len(bs) > 1 else '') + m, color=c, ms=3.0, lw=1.1, mec='white', mew=0.4, zorder=3 if z == 'orig' else 4)
+        ax.plot(bs, ys, (('--' if z == 'orig' else '-') if len(bs) > 1 else '') + m, color=c, ms=3.8 if z == 'orig' else 3.0, lw=1.1, mec='white', mew=0.4, zorder=3 if z == 'orig' else 4)   # G1544: original coordinates dashed with larger markers, visible under the rotation line where they coincide (youtube, word2vec, msmarco)
     lo, hi = min(vals), max(vals); pad = max(2.0, 0.08 * (hi - lo)); ax.set_ylim(max(0, lo - pad), min(100.5, hi + pad))
     ax.set_xlim(0.6, 8.4); ax.set_xticks(BUD); ax.set_xticklabels([str(b) for b in BUD])
     ax.set_facecolor(BG); ax.set_axisbelow(True); ax.grid(True, color='white', lw=0.9, zorder=0)
     for s_ in ax.spines.values(): s_.set_visible(False)
     ax.tick_params(which='both', length=0, pad=1.5); ax.tick_params(axis='y', labelsize=6.5); ax.tick_params(axis='x', labelsize=6.0)
     ax.set_title(f'{d}  (CG {cg(d):.1f})', fontsize=7.0, pad=4)   # a little more room between the panel and its title
-H = [Line2D([], [], color=c, marker=m, ms=3.6, mec='white', mew=0.4, lw=1.1, label=lab) for _, c, m, lab in ARMS]
+H = [Line2D([], [], color=c, marker=m, ms=4.4 if z == 'orig' else 3.6, mec='white', mew=0.4, lw=1.1, ls='--' if z == 'orig' else '-', label=lab) for z, c, m, lab in ARMS]
 fig.legend(handles=H, loc='upper center', bbox_to_anchor=(0.53, 1.0), ncol=3, fontsize=8.0, frameon=False, handlelength=2.0, columnspacing=1.6)
 fig.supxlabel('Bits per dimension B', fontsize=8.5, y=0.005); fig.supylabel('Recall@10 (%)', fontsize=8.5, x=0.005)
 save(fig, 'fig1_recall')

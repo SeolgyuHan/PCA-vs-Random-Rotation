@@ -56,7 +56,7 @@ if __name__ == '__main__':
     axs = [fig.add_subplot(gs[i, j]) for i in range(2) for j in range(6)]
     for ax, d in zip(axs, DS):
         for z, c, m in (('orig', C_RAW, 'D'), ('rot', C_ROT, 'o'), ('pca', C_PCA, 's')):
-            ax.plot(BUDGETS, [J[(d, z, b)] for b in BUDGETS], '-' + m, color=c, ms=2.8, lw=1.1, mec='white', mew=0.4, zorder=3 if z == 'orig' else 4)
+            ax.plot(BUDGETS, [J[(d, z, b)] for b in BUDGETS], ('--' if z == 'orig' else '-') + m, color=c, ms=3.6 if z == 'orig' else 2.8, lw=1.1, mec='white', mew=0.4, zorder=3 if z == 'orig' else 4)   # G1544: the original-coordinate line is dashed with larger markers so it stays visible under the rotation line where the two coincide (word2vec, openai1536)
         lo, hi = spans[d]; ax.set_yscale('log'); ax.set_ylim(10 ** (lo - M), 10 ** (hi + M))
         ax.yaxis.set_major_locator(LogLocator(base=100.0)); ax.yaxis.set_minor_locator(LogLocator(base=10.0, subs=(1.0,), numticks=20)); ax.yaxis.set_minor_formatter(NullFormatter())
         ax.set_xlim(0.6, 8.4); ax.set_xticks(BUDGETS); ax.set_xticklabels([str(b) for b in BUDGETS])
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         for s_ in ax.spines.values(): s_.set_visible(False)
         ax.tick_params(which='both', length=0, pad=1.5); ax.tick_params(axis='y', labelsize=6.5); ax.tick_params(axis='x', labelsize=6.0)
         ax.set_title(f'{d}\n(CG {cg(d):.1f})', fontsize=7.5, pad=2, linespacing=1.0)
-    fig.legend(handles=[Line2D([], [], color=C_RAW, marker='D', ms=3.6, mec='white', mew=0.4, lw=1.1, label='original coordinates+α=1'),
+    fig.legend(handles=[Line2D([], [], color=C_RAW, marker='D', ms=4.4, mec='white', mew=0.4, lw=1.1, ls='--', label='original coordinates+α=1'),
                         Line2D([], [], color=C_ROT, marker='o', ms=3.6, mec='white', mew=0.4, lw=1.1, label='Random Rotation+α=0'),
                         Line2D([], [], color=C_PCA, marker='s', ms=3.6, mec='white', mew=0.4, lw=1.1, label='PCA+α=1')],
                loc='upper center', bbox_to_anchor=(0.53, 1.0), ncol=3, fontsize=8.0, frameon=False, handlelength=2.0, columnspacing=1.6)

@@ -62,6 +62,6 @@ that Fig. 2 draws.
 
 ## The guarantee's residual code (Section III-D)
 
-For each vector, the size of the residual `r(x)` (end-cell remainders of dithered components and the errors of 1-bit components) is
+For each vector, the size of the residual `r(x)` (end-cell remainders of dithered components, the errors of 1-bit components, and the errors of components without bits, which are reconstructed as their mean) is
 stored rounded up on a geometric scale with 2, 3, or 4 bits (code 0 = no residual; levels from the 10th percentile of the nonzero sizes
 over the database to the maximum). `experiments/guarantee/guarantee.py` measures the coverage of the resulting intervals.

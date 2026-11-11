@@ -160,11 +160,11 @@
   "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_fashion-mnist_95": {
-  "v": "0.16",
+  "v": "0.15",
   "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_fashion-mnist_99": {
-  "v": "0.012",
+  "v": "0.011",
   "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_fashion-mnist_999": {
@@ -184,11 +184,11 @@
   "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_mnist_95": {
-  "v": "0.04",
+  "v": "0.03",
   "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_mnist_99": {
-  "v": "0.002",
+  "v": "0.001",
   "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_mnist_999": {
@@ -208,11 +208,11 @@
   "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_msong_95": {
-  "v": "0.02",
+  "v": "0.01",
   "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_msong_99": {
-  "v": "0.001",
+  "v": "0.000",
   "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_msong_999": {
@@ -236,7 +236,7 @@
   "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_openai3072_99": {
-  "v": "0.016",
+  "v": "0.015",
   "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
  },
  "guar_miss_openai3072_999": {

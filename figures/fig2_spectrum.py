@@ -47,11 +47,11 @@ def main(big):
             d = O[i]
             if part == 0:
                 for k, col, lab in (('orig', C_RAW, 'original coordinates'), ('rot', C_ROT, 'Random Rotation'), ('pca', C_PCA, 'PCA')):
-                    y = D[d]['a'][k]; ax.plot(np.linspace(0, 1, len(y)), y, color=col, linewidth=1.0, label=lab)
+                    y = D[d]['a'][k]; ax.plot(np.linspace(0, 1, len(y)), y, color=col, linewidth=1.0, label=lab, ls='--' if k == 'orig' else '-', zorder=5 if k == 'orig' else 3)   # G1544: original coordinates dashed on top, so the line shows where it coincides with the rotation line (word2vec, gist)
                 ax.set_yscale('log'); ax.set_ylim(1e-3, 1e2); ax.set_yticks([1e-3, 1e-1, 1e1])
             else:
                 for k, col, lab in (('orig', C_RAW, LBL_ORIG), ('rot', C_ROT, LBL_ROT), ('pca', C_PCA, LBL_PCA)):
-                    y = D[d]['b'][k]; ax.plot(np.linspace(0, 1, len(y)), y, color=col, linewidth=1.0, label=lab)
+                    y = D[d]['b'][k]; ax.plot(np.linspace(0, 1, len(y)), y, color=col, linewidth=1.0, label=lab, ls='--' if k == 'orig' else '-', zorder=5 if k == 'orig' else 3)
                 ax.set_yscale('log'); ax.set_ylim(1e-6, 1e2); ax.set_yticks([1e-6, 1e-4, 1e-2, 1e0])
             ax.set_title(f'{d}  (CG {cg(d):.1f})', fontsize=7.2, pad=2); ax.tick_params(length=2, labelsize=6.5)
             ax.set_xticks([0, 0.5, 1]); ax.set_xticklabels(['0', '.5', '1'])
