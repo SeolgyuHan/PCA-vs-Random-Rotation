@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+audio,pcaslope,unified,3,0.0,0.363,0.363,192,3,576
+audio,pcaslope,unified,3,0.25,0.7325,0.7325,192,5,576
+audio,pcaslope,unified,3,0.5,0.9295,0.93,189,8,576
+audio,pcaslope,unified,3,0.75,0.963,0.963,165,10,576
+audio,pcaslope,unified,3,1.25,0.9805,0.9805,121,14,576
+audio,pcaslope,unified,3,1.5,0.9765,0.977,109,16,576
+audio,pcaslope,unified,3,1.75,0.972,0.972,99,18,576
+audio,pcaslope,unified,3,2.0,0.964,0.964,89,20,576

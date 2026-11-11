@@ -1,0 +1,6 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+msmarco10m,rot,unified,1,0.0,0.719917,0.719917,1024,1,1024,10000000,1677
+msmarco10m,rot,unified,2,0.0,0.822421,0.822481,1024,2,2048,10000000,1677
+msmarco10m,rot,unified,4,0.0,0.936017,0.936136,1024,4,4096,10000000,1677
+msmarco10m,rot,unified,6,0.0,0.978354,0.978414,1024,6,6144,10000000,1677
+msmarco10m,rot,unified,8,0.0,0.993381,0.993441,1024,8,8192,10000000,1677

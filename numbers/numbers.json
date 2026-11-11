@@ -1,0 +1,978 @@
+{
+ "adv_audio_drecall": {
+  "v": "+0.5",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_fashion-mnist_drecall": {
+  "v": "0.0",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_gist_drecall": {
+  "v": "+0.1",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_mnist_drecall": {
+  "v": "0.0",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_msmarco_drecall": {
+  "v": "−0.1",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_msong_drecall": {
+  "v": "+0.1",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_openai1536_drecall": {
+  "v": "−0.2",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_openai3072_drecall": {
+  "v": "0.0",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_word2vec_drecall": {
+  "v": "0.0",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "adv_youtube_drecall": {
+  "v": "−0.4",
+  "src": "Recall@10 of PCA+alpha=1 at B = 3 with dither minus deterministic rounding (pp)"
+ },
+ "b3_lead_count": {
+  "v": "9",
+  "src": "datasets where both hold at B = 3"
+ },
+ "b3_recall_lead_count": {
+  "v": "9",
+  "src": "datasets where PCA+alpha=1 has higher Recall@10 than Random Rotation+alpha=0 at B = 3 (results/fullscan, unified)"
+ },
+ "b3_score_lead_count": {
+  "v": "9",
+  "src": "datasets where PCA+alpha=1 has lower score error at B = 3 (results/score_error, unified)"
+ },
+ "big_m10_pp": {
+  "v": "6.7",
+  "src": "Recall@10 of PCA+alpha=1 minus Random Rotation+alpha=0 at B = 3 on msmarco10m (pp)"
+ },
+ "big_m113_pp": {
+  "v": "7.5",
+  "src": "Recall@10 of PCA+alpha=1 minus Random Rotation+alpha=0 at B = 3 on msmarco113m (pp)"
+ },
+ "big_sift_pp": {
+  "v": "26.9",
+  "src": "Recall@10 of PCA+alpha=1 minus Random Rotation+alpha=0 at B = 3 on sift100m (pp)"
+ },
+ "cg_audio": {
+  "v": "18.92",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_fashion-mnist": {
+  "v": "12.52",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_gist": {
+  "v": "8.23",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_max": {
+  "v": "31.6",
+  "src": "largest CG of the ten datasets"
+ },
+ "cg_min": {
+  "v": "1.15",
+  "src": "smallest CG of the ten datasets"
+ },
+ "cg_mnist": {
+  "v": "31.62",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_msmarco": {
+  "v": "3.84",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_msmarco10m": {
+  "v": "3.77",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_msmarco113m": {
+  "v": "3.75",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_msong": {
+  "v": "20.60",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_openai1536": {
+  "v": "2.98",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_openai3072": {
+  "v": "4.79",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_sift100m": {
+  "v": "2.61",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_word2vec": {
+  "v": "1.41",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "cg_youtube": {
+  "v": "1.15",
+  "src": "coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)"
+ },
+ "corr_share_max": {
+  "v": "98",
+  "src": "same, max"
+ },
+ "corr_share_min": {
+  "v": "63",
+  "src": "share of log2 CG in the correlation factor, six even-variance datasets, min (%)"
+ },
+ "det_drecall_max": {
+  "v": "+0.5",
+  "src": "same, max over the ten"
+ },
+ "det_drecall_min": {
+  "v": "−0.4",
+  "src": "same, min over the ten"
+ },
+ "det_j_pct": {
+  "v": "6",
+  "src": "largest change of the score error of PCA+alpha=1 at B = 3 from the dither (%, rounded up)"
+ },
+ "eu_norm2_max": {
+  "v": "0.05",
+  "src": "largest ||E[u]||^2 over the ten datasets (results/calc/direction_stats.csv), rounded up to two decimals"
+ },
+ "guar_miss_audio_95": {
+  "v": "0.06",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_audio_99": {
+  "v": "0.002",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_audio_999": {
+  "v": "0.0000",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_fashion-mnist_95": {
+  "v": "0.16",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_fashion-mnist_99": {
+  "v": "0.012",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_fashion-mnist_999": {
+  "v": "0.0004",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_gist_95": {
+  "v": "0.18",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_gist_99": {
+  "v": "0.014",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_gist_999": {
+  "v": "0.0003",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_mnist_95": {
+  "v": "0.04",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_mnist_99": {
+  "v": "0.002",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_mnist_999": {
+  "v": "0.0000",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msmarco_95": {
+  "v": "0.13",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msmarco_99": {
+  "v": "0.011",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msmarco_999": {
+  "v": "0.0004",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msong_95": {
+  "v": "0.02",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msong_99": {
+  "v": "0.001",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_msong_999": {
+  "v": "0.0000",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai1536_95": {
+  "v": "0.25",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai1536_99": {
+  "v": "0.026",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai1536_999": {
+  "v": "0.0012",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai3072_95": {
+  "v": "0.14",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai3072_99": {
+  "v": "0.016",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_openai3072_999": {
+  "v": "0.0006",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_word2vec_95": {
+  "v": "0.12",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_word2vec_99": {
+  "v": "0.007",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_word2vec_999": {
+  "v": "0.0001",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_youtube_95": {
+  "v": "0.23",
+  "src": "worst miss rate of the interval at nominal 0.95 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_youtube_99": {
+  "v": "0.021",
+  "src": "worst miss rate of the interval at nominal 0.99 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "guar_miss_youtube_999": {
+  "v": "0.0006",
+  "src": "worst miss rate of the interval at nominal 0.999 over B = 1/2/3/4/6/8, residual size in 2-4 bits, dither seeds 0-4 (results/guarantee; %)"
+ },
+ "jr_agree": {
+  "v": "58",
+  "src": "cells where score error and recall favor the same design"
+ },
+ "jr_b3_hicg_max": {
+  "v": "218",
+  "src": "same, max"
+ },
+ "jr_b3_hicg_min": {
+  "v": "118",
+  "src": "B = 3 ratio, datasets with CG > 10, min"
+ },
+ "jr_b3_lowcg_max": {
+  "v": "1.45",
+  "src": "same, max"
+ },
+ "jr_b3_lowcg_min": {
+  "v": "0.94",
+  "src": "B = 3 ratio, youtube and word2vec, min"
+ },
+ "jr_cells": {
+  "v": "60",
+  "src": "ten datasets x six budgets"
+ },
+ "jratio_audio_b1": {
+  "v": "53",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_audio_b2": {
+  "v": "107",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_audio_b3": {
+  "v": "158",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_audio_b4": {
+  "v": "150",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_audio_b6": {
+  "v": "117",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_audio_b8": {
+  "v": "100",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b1": {
+  "v": "133",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b2": {
+  "v": "118",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b3": {
+  "v": "118",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b4": {
+  "v": "86",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b6": {
+  "v": "47",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_fashion-mnist_b8": {
+  "v": "35",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b1": {
+  "v": "30",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b2": {
+  "v": "46",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b3": {
+  "v": "42",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b4": {
+  "v": "37",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b6": {
+  "v": "23",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_gist_b8": {
+  "v": "8.28",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b1": {
+  "v": "48",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b2": {
+  "v": "98",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b3": {
+  "v": "138",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b4": {
+  "v": "155",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b6": {
+  "v": "140",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_mnist_b8": {
+  "v": "95",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b1": {
+  "v": "4.07",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b2": {
+  "v": "6.72",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b3": {
+  "v": "8.52",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b4": {
+  "v": "9.26",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b6": {
+  "v": "9.08",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco10m_b8": {
+  "v": "7.10",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b1": {
+  "v": "4.02",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b2": {
+  "v": "6.71",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b3": {
+  "v": "8.45",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b4": {
+  "v": "9.11",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b6": {
+  "v": "8.66",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco113m_b8": {
+  "v": "8.13",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b1": {
+  "v": "4.15",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b2": {
+  "v": "7.34",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b3": {
+  "v": "9.76",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b4": {
+  "v": "11",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b6": {
+  "v": "11",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msmarco_b8": {
+  "v": "9.88",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b1": {
+  "v": "137",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b2": {
+  "v": "178",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b3": {
+  "v": "218",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b4": {
+  "v": "259",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b6": {
+  "v": "73",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_msong_b8": {
+  "v": "37",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b1": {
+  "v": "6.47",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b2": {
+  "v": "7.64",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b3": {
+  "v": "7.15",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b4": {
+  "v": "7.13",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b6": {
+  "v": "6.85",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai1536_b8": {
+  "v": "3.76",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b1": {
+  "v": "11",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b2": {
+  "v": "16",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b3": {
+  "v": "17",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b4": {
+  "v": "16",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b6": {
+  "v": "12",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_openai3072_b8": {
+  "v": "2.60",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b1": {
+  "v": "5.30",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b2": {
+  "v": "5.94",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b3": {
+  "v": "5.51",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b4": {
+  "v": "5.54",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b6": {
+  "v": "5.15",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_sift100m_b8": {
+  "v": "4.33",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b1": {
+  "v": "2.08",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b2": {
+  "v": "1.54",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b3": {
+  "v": "1.45",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b4": {
+  "v": "1.43",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b6": {
+  "v": "1.34",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_word2vec_b8": {
+  "v": "1.19",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b1": {
+  "v": "1.30",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b2": {
+  "v": "1.01",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b3": {
+  "v": "0.94",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b4": {
+  "v": "0.92",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b6": {
+  "v": "0.86",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "jratio_youtube_b8": {
+  "v": "0.81",
+  "src": "score error of Random Rotation+alpha=0 divided by that of PCA+alpha=1 (results/score_error, unified)"
+ },
+ "openai1536_A": {
+  "v": "1.07",
+  "src": "allocation gain of the original coordinates, openai1536 (exact)"
+ },
+ "openai1536_CG": {
+  "v": "2.98",
+  "src": "CG of openai1536"
+ },
+ "orig_even_pca_gain_count": {
+  "v": "5",
+  "src": "of the six datasets with nearly even original-coordinate variances (A_orig < 1.2), those where PCA+alpha=1 has higher Recall@10 than the original coordinates at B = 3"
+ },
+ "pca_inactive_b3_count": {
+  "v": "8",
+  "src": "datasets where PCA+alpha=1 leaves components without bits at B = 3 (n_active < d)"
+ },
+ "rec_b3_hicg_dpp_max": {
+  "v": "39",
+  "src": "same, max"
+ },
+ "rec_b3_hicg_dpp_min": {
+  "v": "10",
+  "src": "Recall@10 of PCA+alpha=1 minus Random Rotation+alpha=0 at B = 3 (pp, rounded), datasets with CG > 10, min"
+ },
+ "rot_below_orig_count": {
+  "v": "7",
+  "src": "datasets where Random Rotation+alpha=0 has lower Recall@10 at B = 3 than slope-1 allocation over the original coordinates"
+ },
+ "rot_det_drecall_max": {
+  "v": "+0.9",
+  "src": "same, max"
+ },
+ "rot_det_drecall_min": {
+  "v": "−0.3",
+  "src": "Recall@10 of Random Rotation+alpha=0 at B = 3 without dither minus with dither (pp), min"
+ },
+ "rr_alone_90": {
+  "v": "14",
+  "src": "pairs where only PCA+alpha=1 reaches 90% without re-ranking"
+ },
+ "rr_alone_95": {
+  "v": "10",
+  "src": "pairs where only PCA+alpha=1 reaches 95% without re-ranking"
+ },
+ "rr_b1b3_msong_pca": {
+  "v": "30",
+  "src": "msong, PCA+alpha=1 at B = 1, candidates for 95%"
+ },
+ "rr_b1b3_msong_rot": {
+  "v": "778",
+  "src": "msong, Random Rotation+alpha=0 at B = 3, candidates for 95%"
+ },
+ "rr_b1b3_pca_max": {
+  "v": "15",
+  "src": "same, max"
+ },
+ "rr_b1b3_pca_min": {
+  "v": "11",
+  "src": "gist, fashion-mnist, audio, mnist: PCA+alpha=1 at B = 1, candidates for 95%, min"
+ },
+ "rr_b1b3_rot_max": {
+  "v": "23",
+  "src": "same, max"
+ },
+ "rr_b1b3_rot_min": {
+  "v": "13",
+  "src": "same four datasets: Random Rotation+alpha=0 at B = 3, candidates for 95%, min"
+ },
+ "rr_b4_max_95": {
+  "v": "15",
+  "src": "B = 4: largest candidates for 95% over both designs and ten datasets, Random Rotation+alpha=0 on msong excluded"
+ },
+ "rr_b4_max_99": {
+  "v": "29",
+  "src": "same for 99%"
+ },
+ "rr_b4_msong_rot_95": {
+  "v": "175",
+  "src": "B = 4: msong, Random Rotation+alpha=0, candidates for 95%"
+ },
+ "rr_b4_msong_rot_99": {
+  "v": "1,136",
+  "src": "B = 4: msong, Random Rotation+alpha=0, candidates for 99%"
+ },
+ "rr_cells_rest": {
+  "v": "81",
+  "src": "cells outside youtube: nine datasets x B = 1-3 x targets 90/95/99%"
+ },
+ "rr_fewer": {
+  "v": "76",
+  "src": "cells where PCA+alpha=1 needs fewer candidates"
+ },
+ "rr_max_90": {
+  "v": "59",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): largest factor Random Rotation / PCA at 90% over datasets and B = 1-3 (msong, B = 2)"
+ },
+ "rr_max_90_b": {
+  "v": "2",
+  "src": "budget of that largest factor at 90%"
+ },
+ "rr_max_95": {
+  "v": "134",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): largest factor Random Rotation / PCA at 95% over datasets and B = 1-3 (msong, B = 2)"
+ },
+ "rr_max_95_b": {
+  "v": "2",
+  "src": "budget of that largest factor at 95%"
+ },
+ "rr_max_99": {
+  "v": "225",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): largest factor Random Rotation / PCA at 99% over datasets and B = 1-3 (msong, B = 3)"
+ },
+ "rr_max_99_b": {
+  "v": "3",
+  "src": "budget of that largest factor at 99%"
+ },
+ "rr_msong_pca_95": {
+  "v": "14",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): msong, PCA+alpha=1, B = 2, 95%"
+ },
+ "rr_msong_rot_95": {
+  "v": "1,882",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): msong, Random Rotation+alpha=0, B = 2, 95%"
+ },
+ "rr_pairs": {
+  "v": "30",
+  "src": "dataset x budget pairs, B = 1-3"
+ },
+ "rr_tie": {
+  "v": "5",
+  "src": "cells where both need the same number (all at W = 10)"
+ },
+ "rr_yt_pca_95": {
+  "v": "55",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): youtube, PCA+alpha=1, B = 1, 95%"
+ },
+ "rr_yt_rot_95": {
+  "v": "32",
+  "src": "smallest number of re-ranking candidates W >= 10 whose Recall@10 reaches the target (results/rerank, code ranks of the true neighbors): youtube, Random Rotation+alpha=0, B = 1, 95%"
+ },
+ "s3_msm_1m": {
+  "v": "6.6",
+  "src": "same difference on the first million rows of msmarco"
+ },
+ "s3_sift_1m": {
+  "v": "20.2",
+  "src": "same difference on the first million rows of sift100m, fitted on their own (results/bigsets/s3_nseries.csv)"
+ },
+ "slope0_gap_median": {
+  "v": "29.2",
+  "src": "median over the ten of Recall@10 at slope 1 minus slope 0 (uniform bits on the PCA basis), B = 3 (pp)"
+ },
+ "slope_astar_max": {
+  "v": "1.75",
+  "src": "largest best slope over the ten"
+ },
+ "slope_astar_min": {
+  "v": "0.95",
+  "src": "smallest best slope over the ten"
+ },
+ "slope_audio_astar": {
+  "v": "1.00",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_audio_gain": {
+  "v": "0.0",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_audio_r1": {
+  "v": "98.2",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_audio_r_astar": {
+  "v": "98.2",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_fashion-mnist_astar": {
+  "v": "1.15",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_fashion-mnist_gain": {
+  "v": "0.2",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_fashion-mnist_r1": {
+  "v": "97.4",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_fashion-mnist_r_astar": {
+  "v": "97.6",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_gain_max": {
+  "v": "1.1",
+  "src": "largest gain of the best slope over slope 1 (youtube)"
+ },
+ "slope_gain_max_rest": {
+  "v": "0.4",
+  "src": "largest gain over slope 1 on the nine datasets other than youtube (pp)"
+ },
+ "slope_gist_astar": {
+  "v": "1.10",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_gist_gain": {
+  "v": "0.3",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_gist_r1": {
+  "v": "96.6",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_gist_r_astar": {
+  "v": "96.9",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_mnist_astar": {
+  "v": "0.95",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_mnist_gain": {
+  "v": "0.0",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_mnist_r1": {
+  "v": "98.7",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_mnist_r_astar": {
+  "v": "98.7",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_msmarco113m_astar": {
+  "v": "1.15",
+  "src": "best slope at B = 3 on the full scan of the large dataset (results/bigsets/s7_slope.csv and fullscan_slope; ties to the slope closest to 1)"
+ },
+ "slope_msmarco113m_gain": {
+  "v": "0.2",
+  "src": "its Recall@10 minus that of slope 1 (pp)"
+ },
+ "slope_msmarco113m_r1": {
+  "v": "94.9",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_msmarco113m_r_astar": {
+  "v": "95.1",
+  "src": "Recall@10 at the best slope (%)"
+ },
+ "slope_msmarco_astar": {
+  "v": "1.20",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_msmarco_gain": {
+  "v": "0.0",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_msmarco_r1": {
+  "v": "96.4",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_msmarco_r_astar": {
+  "v": "96.4",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_msong_astar": {
+  "v": "1.10",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_msong_gain": {
+  "v": "0.4",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_msong_r1": {
+  "v": "93.4",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_msong_r_astar": {
+  "v": "93.8",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_oos_max_rest": {
+  "v": "+0.1",
+  "src": "same, max"
+ },
+ "slope_oos_min_rest": {
+  "v": "−0.3",
+  "src": "out-of-sample gain over slope 1: slope chosen on one half of the queries, gain measured on the other half, mean over 2,000 random splits (rng 2026); nine datasets other than youtube, min (pp)"
+ },
+ "slope_oos_youtube": {
+  "v": "1.0",
+  "src": "same on youtube"
+ },
+ "slope_openai1536_astar": {
+  "v": "1.10",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_openai1536_gain": {
+  "v": "0.2",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_openai1536_r1": {
+  "v": "97.1",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_openai1536_r_astar": {
+  "v": "97.3",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_openai3072_astar": {
+  "v": "1.35",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_openai3072_gain": {
+  "v": "0.1",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_openai3072_r1": {
+  "v": "98.4",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_openai3072_r_astar": {
+  "v": "98.5",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_sift100m_astar": {
+  "v": "1.20",
+  "src": "best slope at B = 3 on the full scan of the large dataset (results/bigsets/s7_slope.csv and fullscan_slope; ties to the slope closest to 1)"
+ },
+ "slope_sift100m_gain": {
+  "v": "0.9",
+  "src": "its Recall@10 minus that of slope 1 (pp)"
+ },
+ "slope_sift100m_r1": {
+  "v": "72.9",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_sift100m_r_astar": {
+  "v": "73.8",
+  "src": "Recall@10 at the best slope (%)"
+ },
+ "slope_word2vec_astar": {
+  "v": "1.25",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_word2vec_gain": {
+  "v": "0.1",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_word2vec_r1": {
+  "v": "82.2",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_word2vec_r_astar": {
+  "v": "82.3",
+  "src": "Recall@10 at that slope (%)"
+ },
+ "slope_youtube_astar": {
+  "v": "1.75",
+  "src": "slope with the highest Recall@10 at B = 3 (PCA basis, 25 slopes; ties to the slope closest to 1)"
+ },
+ "slope_youtube_gain": {
+  "v": "1.1",
+  "src": "difference of the two printed recalls (pp)"
+ },
+ "slope_youtube_r1": {
+  "v": "88.2",
+  "src": "Recall@10 at slope 1 (%)"
+ },
+ "slope_youtube_r_astar": {
+  "v": "89.3",
+  "src": "Recall@10 at that slope (%)"
+ }
+}

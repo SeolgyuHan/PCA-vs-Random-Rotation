@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+gist,pca,unified,1,1.0,0.8501,0.8509,368,10,960
+gist,pca,det,1,1.0,0.8563,0.8569,368,10,960
+gist,pca,unified,2,1.0,0.9357,0.9361,600,12,1920
+gist,pca,det,2,1.0,0.9379,0.9385,600,12,1920
+gist,pca,unified,3,1.0,0.9663,0.9668,777,13,2880
+gist,pca,det,3,1.0,0.9655,0.9662,777,13,2880
+gist,pca,unified,4,1.0,0.9807,0.9813,898,15,3840
+gist,pca,det,4,1.0,0.9803,0.9811,898,15,3840
+gist,pca,unified,6,1.0,0.9922,0.993,960,17,5760
+gist,pca,det,6,1.0,0.9937,0.9944,960,17,5760
+gist,pca,unified,8,1.0,0.9975,0.9984,960,19,7680
+gist,pca,det,8,1.0,0.9978,0.9986,960,19,7680

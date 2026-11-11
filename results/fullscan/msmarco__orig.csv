@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+msmarco,orig,unified,1,1.0,0.7416,0.7416,736,3,1024
+msmarco,orig,unified,2,1.0,0.8419,0.8419,975,4,2048
+msmarco,orig,unified,3,1.0,0.9042,0.9042,1019,5,3072
+msmarco,orig,unified,4,1.0,0.9426,0.9426,1024,6,4096
+msmarco,orig,unified,6,1.0,0.983,0.9833,1024,8,6144
+msmarco,orig,unified,8,1.0,0.993,0.993,1024,10,8192
+msmarco,orig,det,3,1.0,0.9083,0.9083,1019,5,3072

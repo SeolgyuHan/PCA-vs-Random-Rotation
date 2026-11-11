@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+msmarco,pcaslope,unified,3,0.0,0.8092,0.8092,1024,3,3072
+msmarco,pcaslope,unified,3,0.25,0.89,0.89,1023,5,3072
+msmarco,pcaslope,unified,3,0.5,0.9342,0.9342,1020,6,3072
+msmarco,pcaslope,unified,3,0.75,0.9546,0.9546,870,8,3072
+msmarco,pcaslope,unified,3,1.25,0.9635,0.9635,696,11,3072
+msmarco,pcaslope,unified,3,1.5,0.9616,0.9616,653,12,3072
+msmarco,pcaslope,unified,3,1.75,0.9596,0.9596,624,14,3072
+msmarco,pcaslope,unified,3,2.0,0.9544,0.9544,599,15,3072

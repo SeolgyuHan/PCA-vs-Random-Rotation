@@ -1,0 +1,4 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+pfx_sift1m,pca,unified,3,1.0,0.842,0.842,120,8,384,1000000,1000
+pfx_sift1m,rot,unified,3,0.0,0.6405,0.6405,128,3,384,1000000,1000
+pfx_sift1m,orig,unified,3,1.0,0.6241,0.6241,128,5,384,1000000,1000

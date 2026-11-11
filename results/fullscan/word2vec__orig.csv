@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+word2vec,orig,unified,1,1.0,0.4315,0.4315,300,1,300
+word2vec,orig,unified,2,1.0,0.6252,0.6252,300,2,600
+word2vec,orig,unified,3,1.0,0.7667,0.7667,300,3,900
+word2vec,orig,unified,4,1.0,0.8611,0.8611,300,4,1200
+word2vec,orig,unified,6,1.0,0.9537,0.9537,300,6,1800
+word2vec,orig,unified,8,1.0,0.9838,0.9838,300,8,2400
+word2vec,orig,det,3,1.0,0.7743,0.7743,300,3,900

@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+fashion-mnist,orig,unified,1,1.0,0.4992,0.4992,562,2,784
+fashion-mnist,orig,unified,2,1.0,0.6441,0.6441,633,3,1568
+fashion-mnist,orig,unified,3,1.0,0.8346,0.8346,677,4,2352
+fashion-mnist,orig,unified,4,1.0,0.9239,0.9239,710,6,3136
+fashion-mnist,orig,unified,6,1.0,0.9804,0.9804,744,8,4704
+fashion-mnist,orig,unified,8,1.0,0.9943,0.9943,765,10,6272
+fashion-mnist,orig,det,3,1.0,0.8185,0.8185,677,4,2352

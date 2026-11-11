@@ -1,0 +1,4 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+val_audio_raw,pca,unified,3,1.0,0.9805,0.9805,136,12,576,53387,200
+val_audio_raw,rot,unified,3,0.0,0.721,0.721,192,3,576,53387,200
+val_audio_raw,orig,unified,3,1.0,0.7865,0.7865,160,6,576,53387,200

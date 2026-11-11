@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+msong,rot,unified,1,0.0,0.4005,0.4005,420,1,420
+msong,rot,det,1,0.0,0.4005,0.4005,420,1,420
+msong,rot,unified,2,0.0,0.3925,0.3925,420,2,840
+msong,rot,det,2,0.0,0.4035,0.4035,420,2,840
+msong,rot,unified,3,0.0,0.544,0.544,420,3,1260
+msong,rot,det,3,0.0,0.5505,0.5505,420,3,1260
+msong,rot,unified,4,0.0,0.6915,0.6915,420,4,1680
+msong,rot,det,4,0.0,0.679,0.679,420,4,1680
+msong,rot,unified,6,0.0,0.8775,0.8775,420,6,2520
+msong,rot,det,6,0.0,0.8795,0.8795,420,6,2520
+msong,rot,unified,8,0.0,0.96,0.96,420,8,3360
+msong,rot,det,8,0.0,0.9515,0.9515,420,8,3360

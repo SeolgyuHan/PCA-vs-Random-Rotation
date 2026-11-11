@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+openai1536,pca,unified,1,1.0,0.8831,0.8831,676,7,1536
+openai1536,pca,det,1,1.0,0.8826,0.8826,676,7,1536
+openai1536,pca,unified,2,1.0,0.9501,0.9501,1135,9,3072
+openai1536,pca,det,2,1.0,0.951,0.951,1135,9,3072
+openai1536,pca,unified,3,1.0,0.9714,0.9714,1440,10,4608
+openai1536,pca,det,3,1.0,0.9737,0.9737,1440,10,4608
+openai1536,pca,unified,4,1.0,0.9858,0.9858,1527,11,6144
+openai1536,pca,det,4,1.0,0.9837,0.9837,1527,11,6144
+openai1536,pca,unified,6,1.0,0.9953,0.9953,1534,13,9216
+openai1536,pca,det,6,1.0,0.9951,0.9951,1534,13,9216
+openai1536,pca,unified,8,1.0,0.9979,0.9979,1534,15,12288
+openai1536,pca,det,8,1.0,0.9982,0.9982,1534,15,12288

@@ -1,0 +1,9 @@
+assets_not_in_git/
+assets_release/
+work/
+__pycache__/
+*.pyc
+figures/out/
+numbers/out/
+.DS_Store
+csrc/libbigkern.so

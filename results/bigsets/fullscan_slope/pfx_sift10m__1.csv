@@ -1,0 +1,2 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+pfx_sift10m,pcaslope,unified,3,1.0,0.7856,0.7857,120,8,384,10000000,1000

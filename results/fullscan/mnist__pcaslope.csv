@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+mnist,pcaslope,unified,3,0.0,0.61732,0.61732,712,3,2136
+mnist,pcaslope,unified,3,0.25,0.89297,0.89297,680,6,2136
+mnist,pcaslope,unified,3,0.5,0.96687,0.96687,594,8,2136
+mnist,pcaslope,unified,3,0.75,0.98429,0.98429,531,11,2136
+mnist,pcaslope,unified,3,1.25,0.98625,0.98625,444,15,2136
+mnist,pcaslope,unified,3,1.5,0.98375,0.98375,414,17,2136
+mnist,pcaslope,unified,3,1.75,0.98065,0.98065,386,19,2136
+mnist,pcaslope,unified,3,2.0,0.97701,0.97701,362,21,2136

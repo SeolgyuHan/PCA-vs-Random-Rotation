@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+youtube,orig,unified,1,1.0,0.6957,0.6957,931,3,1024
+youtube,orig,unified,2,1.0,0.8236,0.8236,1024,4,2048
+youtube,orig,unified,3,1.0,0.8951,0.8951,1024,5,3072
+youtube,orig,unified,4,1.0,0.9365,0.9365,1024,6,4096
+youtube,orig,unified,6,1.0,0.9785,0.9785,1024,8,6144
+youtube,orig,unified,8,1.0,0.9957,0.9957,1024,10,8192
+youtube,orig,det,3,1.0,0.8988,0.8988,1024,5,3072

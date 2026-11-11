@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+youtube_cos,rot,unified,1,0.0,0.7159,0.7159,1024,1,1024
+youtube_cos,rot,det,1,0.0,0.7159,0.7159,1024,1,1024
+youtube_cos,rot,unified,2,0.0,0.8222,0.8222,1024,2,2048
+youtube_cos,rot,det,2,0.0,0.8257,0.8257,1024,2,2048
+youtube_cos,rot,unified,3,0.0,0.8918,0.8918,1024,3,3072
+youtube_cos,rot,det,3,0.0,0.8961,0.8961,1024,3,3072
+youtube_cos,rot,unified,4,0.0,0.9359,0.936,1024,4,4096
+youtube_cos,rot,det,4,0.0,0.9397,0.9398,1024,4,4096
+youtube_cos,rot,unified,6,0.0,0.979,0.9791,1024,6,6144
+youtube_cos,rot,det,6,0.0,0.9783,0.9784,1024,6,6144
+youtube_cos,rot,unified,8,0.0,0.9942,0.9943,1024,8,8192
+youtube_cos,rot,det,8,0.0,0.9936,0.9937,1024,8,8192

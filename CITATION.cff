@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "PCA with Variance-Matched Bit Allocation Outperforms Random Rotation in Approximate Nearest Neighbor Search (artifact)"
+authors:
+  - family-names: Han
+    given-names: Seolgyu
+    affiliation: Graduate School of Data Science, Seoul National University
+  - family-names: Lee
+    given-names: Sang-Won
+    affiliation: Graduate School of Data Science, Seoul National University
+repository-code: https://github.com/SeolgyuHan/PCA-vs-Random-Rotation
+license: Apache-2.0
+year: 2026

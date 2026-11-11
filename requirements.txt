@@ -1,0 +1,10 @@
+# Results layer (numbers, figures, checks): python3 numbers/make_numbers.py, figures/*.py, tests/check_results.py
+numpy>=1.24
+matplotlib>=3.7
+# Experiment layer (experiments/, data/gt_l2.py) additionally needs
+scipy>=1.10
+threadpoolctl>=3.0
+# Data preparation (data/*.py) additionally needs, depending on the dataset:
+#   huggingface_hub, pyarrow   (openai1536, openai3072, msmarco)
+#   h5py                       (fashion-mnist, mnist)
+#   tensorflow                 (youtube: reading the YouTube-8M TFRecord shards)

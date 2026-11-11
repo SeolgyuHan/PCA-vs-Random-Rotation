@@ -1,0 +1,6 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+sift100m,rot,unified,1,0.0,0.1977,0.1977,128,1,128,100000000,1000
+sift100m,rot,unified,2,0.0,0.266,0.266,128,2,256,100000000,1000
+sift100m,rot,unified,4,0.0,0.6324,0.6324,128,4,512,100000000,1000
+sift100m,rot,unified,6,0.0,0.8765,0.8765,128,6,768,100000000,1000
+sift100m,rot,unified,8,0.0,0.9636,0.9637,128,8,1024,100000000,1000

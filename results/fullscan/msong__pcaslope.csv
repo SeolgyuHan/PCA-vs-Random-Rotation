@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+msong,pcaslope,unified,3,0.0,0.1565,0.1565,420,3,1260
+msong,pcaslope,unified,3,0.25,0.593,0.593,420,6,1260
+msong,pcaslope,unified,3,0.5,0.8305,0.8305,370,9,1260
+msong,pcaslope,unified,3,0.75,0.916,0.916,350,11,1260
+msong,pcaslope,unified,3,1.25,0.937,0.937,283,16,1260
+msong,pcaslope,unified,3,1.5,0.9195,0.9195,267,19,1260
+msong,pcaslope,unified,3,1.75,0.92,0.92,238,21,1260
+msong,pcaslope,unified,3,2.0,0.9185,0.9185,198,24,1260

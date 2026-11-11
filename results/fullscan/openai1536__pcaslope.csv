@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+openai1536,pcaslope,unified,3,0.0,0.8522,0.8522,1536,3,4608
+openai1536,pcaslope,unified,3,0.25,0.9142,0.9142,1534,5,4608
+openai1536,pcaslope,unified,3,0.5,0.9517,0.9517,1534,6,4608
+openai1536,pcaslope,unified,3,0.75,0.9684,0.9684,1525,8,4608
+openai1536,pcaslope,unified,3,1.25,0.9699,0.9699,1304,12,4608
+openai1536,pcaslope,unified,3,1.5,0.9681,0.9681,1185,13,4608
+openai1536,pcaslope,unified,3,1.75,0.9641,0.9641,1087,15,4608
+openai1536,pcaslope,unified,3,2.0,0.9589,0.9589,1004,17,4608

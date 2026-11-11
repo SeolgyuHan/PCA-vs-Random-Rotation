@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+msong,pca,unified,1,1.0,0.7555,0.7555,154,11,420
+msong,pca,det,1,1.0,0.751,0.751,154,11,420
+msong,pca,unified,2,1.0,0.873,0.873,262,13,840
+msong,pca,det,2,1.0,0.871,0.871,262,13,840
+msong,pca,unified,3,1.0,0.9335,0.9335,323,14,1260
+msong,pca,det,3,1.0,0.933,0.933,323,14,1260
+msong,pca,unified,4,1.0,0.964,0.964,357,15,1680
+msong,pca,det,4,1.0,0.9655,0.9655,357,15,1680
+msong,pca,unified,6,1.0,0.988,0.988,377,17,2520
+msong,pca,det,6,1.0,0.986,0.986,377,17,2520
+msong,pca,unified,8,1.0,0.9955,0.9955,408,20,3360
+msong,pca,det,8,1.0,0.995,0.995,408,20,3360

@@ -1,0 +1,4 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+pfx_msmarco1m,pca,unified,3,1.0,0.95975,0.95975,760,10,3072,1000000,1677
+pfx_msmarco1m,rot,unified,3,0.0,0.893679,0.893679,1024,3,3072,1000000,1677
+pfx_msmarco1m,orig,unified,3,1.0,0.898092,0.898092,1019,5,3072,1000000,1677

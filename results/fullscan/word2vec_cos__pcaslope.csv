@@ -1,0 +1,9 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+word2vec_cos,pcaslope,unified,3,0.0,0.6475,0.6475,300,3,900
+word2vec_cos,pcaslope,unified,3,0.25,0.6914,0.6914,300,4,900
+word2vec_cos,pcaslope,unified,3,0.5,0.7762,0.7762,300,5,900
+word2vec_cos,pcaslope,unified,3,0.75,0.8075,0.8075,300,6,900
+word2vec_cos,pcaslope,unified,3,1.25,0.8241,0.8241,300,8,900
+word2vec_cos,pcaslope,unified,3,1.5,0.8195,0.8195,300,9,900
+word2vec_cos,pcaslope,unified,3,1.75,0.8057,0.8057,300,10,900
+word2vec_cos,pcaslope,unified,3,2.0,0.7908,0.7908,300,11,900

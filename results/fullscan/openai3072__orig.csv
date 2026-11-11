@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+openai3072,orig,unified,1,1.0,0.8724,0.8724,2280,3,3072
+openai3072,orig,unified,2,1.0,0.9242,0.9242,3042,4,6144
+openai3072,orig,unified,3,1.0,0.9553,0.9553,3062,5,9216
+openai3072,orig,unified,4,1.0,0.9738,0.9738,3067,6,12288
+openai3072,orig,unified,6,1.0,0.9904,0.9904,3068,8,18432
+openai3072,orig,unified,8,1.0,0.9979,0.9979,3068,10,24576
+openai3072,orig,det,3,1.0,0.9564,0.9564,3062,5,9216

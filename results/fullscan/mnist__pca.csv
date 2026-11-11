@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+mnist,pca,unified,1,1.0,0.926,0.926,245,9,712
+mnist,pca,det,1,1.0,0.92628,0.92628,245,9,712
+mnist,pca,unified,2,1.0,0.9719,0.9719,404,11,1424
+mnist,pca,det,2,1.0,0.97236,0.97236,404,11,1424
+mnist,pca,unified,3,1.0,0.98723,0.98723,482,13,2136
+mnist,pca,det,3,1.0,0.9871,0.9871,482,13,2136
+mnist,pca,unified,4,1.0,0.99392,0.99392,538,14,2848
+mnist,pca,det,4,1.0,0.99365,0.99365,538,14,2848
+mnist,pca,unified,6,1.0,0.99816,0.99816,606,17,4272
+mnist,pca,det,6,1.0,0.99823,0.99823,606,17,4272
+mnist,pca,unified,8,1.0,0.99942,0.99942,650,19,5696
+mnist,pca,det,8,1.0,0.99939,0.99939,650,19,5696

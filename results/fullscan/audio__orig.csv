@@ -1,0 +1,8 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+audio,orig,unified,1,1.0,0.278,0.278,94,3,192
+audio,orig,unified,2,1.0,0.6075,0.608,139,5,384
+audio,orig,unified,3,1.0,0.787,0.787,160,6,576
+audio,orig,unified,4,1.0,0.877,0.877,192,7,768
+audio,orig,unified,6,1.0,0.968,0.968,192,9,1152
+audio,orig,unified,8,1.0,0.9935,0.9935,192,11,1536
+audio,orig,det,3,1.0,0.762,0.7625,160,6,576

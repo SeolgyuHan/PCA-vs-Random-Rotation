@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+audio,rot,unified,1,0.0,0.5695,0.5695,192,1,192
+audio,rot,det,1,0.0,0.5695,0.5695,192,1,192
+audio,rot,unified,2,0.0,0.5975,0.598,192,2,384
+audio,rot,det,2,0.0,0.607,0.6075,192,2,384
+audio,rot,unified,3,0.0,0.729,0.7295,192,3,576
+audio,rot,det,3,0.0,0.731,0.7315,192,3,576
+audio,rot,unified,4,0.0,0.835,0.8355,192,4,768
+audio,rot,det,4,0.0,0.838,0.838,192,4,768
+audio,rot,unified,6,0.0,0.9535,0.9535,192,6,1152
+audio,rot,det,6,0.0,0.9535,0.954,192,6,1152
+audio,rot,unified,8,0.0,0.9865,0.987,192,8,1536
+audio,rot,det,8,0.0,0.9865,0.987,192,8,1536

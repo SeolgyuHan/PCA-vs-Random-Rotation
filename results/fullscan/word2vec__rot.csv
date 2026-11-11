@@ -1,0 +1,13 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits
+word2vec,rot,unified,1,0.0,0.436,0.436,300,1,300
+word2vec,rot,det,1,0.0,0.436,0.436,300,1,300
+word2vec,rot,unified,2,0.0,0.6248,0.6248,300,2,600
+word2vec,rot,det,2,0.0,0.6359,0.6359,300,2,600
+word2vec,rot,unified,3,0.0,0.7691,0.7691,300,3,900
+word2vec,rot,det,3,0.0,0.7753,0.7753,300,3,900
+word2vec,rot,unified,4,0.0,0.8597,0.8597,300,4,1200
+word2vec,rot,det,4,0.0,0.8618,0.8618,300,4,1200
+word2vec,rot,unified,6,0.0,0.9533,0.9533,300,6,1800
+word2vec,rot,det,6,0.0,0.952,0.952,300,6,1800
+word2vec,rot,unified,8,0.0,0.9842,0.9842,300,8,2400
+word2vec,rot,det,8,0.0,0.984,0.984,300,8,2400
