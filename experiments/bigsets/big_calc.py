@@ -11,6 +11,7 @@ import numpy as np
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 OC = f'{B.OUT}/calc'; os.makedirs(OC, exist_ok=True)
 def am(x): return float(np.mean(x))
 def gm(x): return float(np.exp(np.mean(np.log(x))))

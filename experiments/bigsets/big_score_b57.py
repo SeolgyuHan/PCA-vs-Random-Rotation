@@ -7,6 +7,7 @@ import numpy as np
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 NS = 10_000; BUDGETS = (5, 7); O1 = f'{B.OUT}/score_error_b57'; os.makedirs(O1, exist_ok=True)
 F1 = ['dataset', 'pair', 'mode', 'B', 'J_meas', 'bq', 'ER2', 'lam_mean_u', 'd', 'n_active']
 

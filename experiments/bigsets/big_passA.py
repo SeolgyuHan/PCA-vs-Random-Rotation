@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
-sys.path.insert(0, B.CAMP)
+B.ensure_dirs()
 from pcafair import bigkern as C  # noqa: E402 (top-k filtering kernels; make -C csrc)
 from pcafair.engine import haar_fullscan  # noqa: E402
 from scipy.linalg.blas import dsyrk  # noqa: E402

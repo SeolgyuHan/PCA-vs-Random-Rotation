@@ -20,6 +20,7 @@ Everything the paper prints is computed from these files by `numbers/make_number
 | `bigsets/s3_nseries.csv` | Recall@10 at B = 3 against N on the same stream and queries | `family, dataset, N, pca, rot, orig, gap_pp` |
 | `bigsets/s6_cost.csv` | PCA fitting and encoding time at B = 3, single thread | `dataset, N, d, train_rows, pca_fit_s, rot_draw_s, encode_s, ...` |
 | `bigsets/s7_slope.csv` | Recall@10 at slopes 0, 0.5, 1, 1.5 | `dataset, alpha, recall_l2, recall_l2_tie, n_active, max_bits` |
+| `bigsets/validation/validate_audio.json` | the large-dataset pipeline run on audio against the ten-dataset results (codec parameters, recall, score error) | `experiments/bigsets/big_validate.py` |
 
 Designs: `pca` = PCA+α=1, `rot` = Random Rotation+α=0, `orig` = slope-1 allocation over the original coordinates. B is the bit
 budget per dimension. Recall values are fractions (0–1); the paper prints percentages.

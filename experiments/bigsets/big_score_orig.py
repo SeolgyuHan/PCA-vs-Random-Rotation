@@ -9,6 +9,7 @@ import numpy as np
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 from threadpoolctl import threadpool_limits  # noqa: E402
 NS = 10_000; B_ALL = (1, 2, 3, 4, 5, 6, 7, 8); B_DEC = (1, 2, 3, 4, 6, 8)
 O1 = f'{B.OUT}/score_error_orig'; O2 = f'{B.OUT}/decomp_orig'

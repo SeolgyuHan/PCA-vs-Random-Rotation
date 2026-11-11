@@ -4,7 +4,7 @@
 import os, sys, csv
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')))
 from pcafair.config import OUT as OUT_ROOT  # noqa: E402
-OUT = str(OUT_ROOT / 'bigsets'); rows = []
+OUT = str(OUT_ROOT / 'bigsets'); os.makedirs(OUT, exist_ok=True); rows = []
 for ds in ('sift100m', 'msmarco10m', 'msmarco113m'):
     R = {}
     p1 = f'{OUT}/fullscan/{ds}.csv'

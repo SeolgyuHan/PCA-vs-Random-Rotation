@@ -13,6 +13,7 @@ import numpy as np
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 
 SMOKE = '--smoke' in sys.argv; CH = 5_000 if SMOKE else 50_000
 OUT = f'{B.OUT}/s6_cost{".smoke" if SMOKE else ""}.csv'

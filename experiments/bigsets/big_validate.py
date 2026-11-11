@@ -8,6 +8,7 @@ import numpy as np
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 from pcafair.config import RESULTS, FROZEN, PREPARED, RAW as RAW_DIR  # noqa: E402
 PREP = str(PREPARED); RAW = f'{RAW_DIR}/audio'; L2 = str(RESULTS)
 OV = f'{B.OUT}/validation'; os.makedirs(OV, exist_ok=True)

@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
+B.ensure_dirs()
 from pcafair.topk import Top  # noqa: E402
 from threadpoolctl import threadpool_limits  # noqa: E402
 K = 10; QB = 64; RULE = {'pca': ('alpha1', 1.0), 'rot': ('uniform', 0.0), 'orig': ('alpha1', 1.0)}

@@ -12,6 +12,8 @@ applied to the L2 score error predicts the outcome, and the measurements agree. 
 error and higher recall on every dataset except the one whose coding gain is close to 1, and on the ten datasets where re-ranking was
 measured it needs fewer re-ranking candidates. Its lead grows with the coding gain.
 
+![Recall@10 against bits per dimension for the three bases on twelve datasets (Fig. 1 of the paper)](figures/published/fig1_recall.png)
+
 ## Two layers
 
 | Layer | What you need | What it does | Time |
@@ -75,5 +77,6 @@ against the exact L2 top-10 with a full scan, and re-ranking re-scores the top W
 
 ## Citation and license
 
-`CITATION.cff` has the citation entry. The code and the result files are released under the Apache License 2.0 (`LICENSE`); the
-datasets keep their own licenses and are not redistributed here.
+`CITATION.cff` has the citation entry. The code and the result files are released under the Apache License 2.0 (`LICENSE`, `NOTICE`);
+the datasets keep their own licenses and are not redistributed here. A GitHub Actions workflow (`.github/workflows/reproduce.yml`) runs
+`reproduce.sh` on every push.

@@ -1,4 +1,6 @@
 # Results layer (numbers, figures, checks): python3 numbers/make_numbers.py, figures/*.py, tests/check_results.py
+# The published figures were drawn with numpy 2.2.6 and matplotlib 3.10.8 (Python 3.10); other versions redraw them with at most
+# antialiasing differences, which tests/check_results.py tolerates.
 numpy>=1.24
 matplotlib>=3.7
 # Experiment layer (experiments/, data/gt_l2.py) additionally needs

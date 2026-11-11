@@ -18,6 +18,11 @@ from. import codec as FC  # noqa: E402
 from.config import BIG_RAW, BIG_WORK, OUT as OUT_ROOT, FROZEN as FROZEN_DIR  # noqa: E402
 WORK = str(BIG_WORK); OUT = str(OUT_ROOT / 'bigsets'); LOG = str(BIG_WORK / 'progress.md')
 STATS = str(BIG_WORK / 'stats'); SCAL = str(BIG_RAW); FROZEN = str(FROZEN_DIR)
+
+
+def ensure_dirs():
+    """Create the work and output directories (called by the scripts, not at import, so that reading this module has no side effect)."""
+    for d in (WORK, OUT, STATS, FROZEN): os.makedirs(d, exist_ok=True)
 SETS = {
     'sift100m':    dict(base=f'{SCAL}/SIFT100M/base.100M.fvecs', d=128, N=100_000_000, query=f'{SCAL}/SIFT100M/query.10K.fvecs', nq=1000,
                         type='image', group='sift100m', cuts=(1_000_000, 10_000_000)),
