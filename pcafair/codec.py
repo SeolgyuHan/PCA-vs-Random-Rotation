@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""the common codec of both designs. Every experiment reads this module.
+"""The common codec of both designs. Every experiment reads this module.
 
 Design (both pairs):
   normalization u = x / ||x|| (x = centred database vector in the prepared PCA coordinates; ||x|| is the norm the L2 estimate stores)
-  basis 'pca': eigenvectors of Cov(u) on the training sample (descending); 'rot': haar_fullscan(d, 0); 'id': no transform
+  basis 'pca': eigenvectors of Cov(u) on the training sample (descending); 'rot': haar_fullscan(d, 0); 'orig': the original
+                 coordinates (raw rows centred by the raw mean, constant coordinates removed)
   cells range selection: per component and bit count b, uniform 2^b cells on [lo, hi], where (lo, hi) is the clip at
                  training-sample quantiles p in PG (p = 0 -> the database [min, max]) that minimizes (hi-lo)^2 4^-b / 12 + clipMSE
   reconstruction 'det': deterministic rounding with gain correction: x_hat = a_i + w_i * k, a_i = mu_i + (lo + W/2 - m_i)/g_i,
-                 w_i = W/g_i (Bussgang gain 1 on the training sample; linear in the code k, so the SIMD kernels take it as is);
+                 w_i = W/g_i (Bussgang gain 1 on the training sample; linear in the code k);
                  above 8 bits the midpoint (a_i = lo + W/2, w_i = W).
                  'dither': shared subtractive dither (one z_i ~ U(-W/2, W/2) per component, seed), x_hat = lo + (k + 1/2) W - z_i
                  'unified': components with >= 2 bits are dithered (seed) and then gain
@@ -17,7 +18,7 @@ Design (both pairs):
                  variance of the coordinate (A2); 'alpha1': Eq. (2) slope 1 on the variances; 'uniform': B bits everywhere
   score ||x||^2 - 2 ||x|| <q, u_hat> (norm=True) or ||x||^2 - 2 <q, x_hat> (norm=False, ablation)
 Training sample: database rows, numpy default_rng(7), min(200k, 1.2e8/d) rows.
-Usage: codec = FairCodec(ds, basis, norm=True).fit; bits = codec.alloc(B, 'exact'); pl = codec.plan(bits)
+Usage: codec = FairCodec(ds, basis, norm=True).fit(); bits = codec.alloc(B, 'exact'); pl = codec.plan(bits)
        z, gd = codec.unified_draw(bits, pl, seed=0); Yh = codec.decode_mode(codec.coords(X, R), pl, 'unified', z, gd)
        codec.save(path); codec = FairCodec.load(path) (the training sample is rebuilt on demand for the gain fits)"""
 import os, sys, importlib.util

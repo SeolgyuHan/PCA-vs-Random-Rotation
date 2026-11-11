@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ S6: the cost check of Section IV on the datasets of 10M rows or more.
-Run single-threaded on one pinned core in a quiet window (the chain: taskset -c 2, one BLAS thread, after E8). Per dataset:
+Run single-threaded on one pinned core in a quiet window (taskset, one BLAS thread). Per dataset:
   pca_fit covariance of the frozen PCA codec's training sample of u (its stored rows ti: seed 7, min(200k, 1.2e8/d)) + eigh
   rot_draw haar_fullscan(d, 0), what Random Rotation+alpha=0 needs instead
   encode PCA design at B = 3: norms, u = x/||x||, one projection by the stored basis (W M, folded before the clock), dithered

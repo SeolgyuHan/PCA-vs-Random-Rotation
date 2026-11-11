@@ -11,9 +11,9 @@ from concurrent.futures import ThreadPoolExecutor
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
-import nu_taskq as NU  # noqa: E402
+from pcafair.topk import Top  # noqa: E402
 from threadpoolctl import threadpool_limits  # noqa: E402
-f = NU.f; K = 10; QB = 64
+K = 10; QB = 64
 FS = f'{B.OUT}/fullscan_slope'; os.makedirs(FS, exist_ok=True)
 FIELDS = ['dataset', 'piece', 'mode', 'B', 'alpha', 'recall_l2', 'recall_l2_tie', 'n_active', 'max_bits', 'realized_bits', 'N', 'nq']
 
@@ -40,7 +40,7 @@ def main(grp, alphas):
         Qa = c.qcoords(Qp).astype(np.float32)
         for a in alphas:
             bits = c.alloc(3, rule_of(a)); pl = c.plan(bits)
-            V[(n, a)] = dict(bits=bits, pl=pl, z=c.dither(bits, 0), Qa=Qa, top=f.Top(nq, False))
+            V[(n, a)] = dict(bits=bits, pl=pl, z=c.dither(bits, 0), Qa=Qa, top=Top(nq, False, K))
     ck = f'{B.WORK}/{grp}-passB-slope-{atag}.ckpt.npz'; z = B.load_ckpt(ck); pos = 0
     if z is not None:
         pos = int(z['pos'])

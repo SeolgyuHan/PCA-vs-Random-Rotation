@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" (Figure 3 and the S of Table II): the score error within each query with the frozen codecs, exactly the protocols of
+""" (Figure 3 and the S of Table III): the score error within each query with the frozen codecs, exactly the protocols of
 experiments/score_error/score_error.py (E2: every query x 10,000 database rows sampled with numpy default_rng(123); J_meas, bq, J_sep, J_hr,
 J_noise, c0; pairs pca alpha = 1 / rot uniform; B in {1, 2, 3, 4, 6, 8}; modes unified and det) and results/decomp_G1045.py
 (the telescoping J_meas -> J_full -> J_sep -> J_hr -> J_A2 and the strict before-encoding prediction J_A2tr with c0 from the

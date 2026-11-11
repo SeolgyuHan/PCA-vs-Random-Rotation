@@ -3,7 +3,7 @@
 B = 1-3. Source: the code ranks (results/rerank/<ds>__<design>.npz; frozen codecs, unified quantizer, dither seed 0, all
 queries): for every query and each of its 10 true neighbours, the number of database vectors with a smaller code score. Recall@10
 after re-scoring the top W of the code ranking with the original vectors = mean #(rank < W)/10, exact for every W >= 10 (W = 10 is
-the scan alone); the E5 re-ranking grid agrees within 0.11 pp at all 520 grid points. Colour family = design (Blues: Random
+the scan alone); the earlier re-ranking grid agrees within 0.11 pp at all 520 grid points. Colour family = design (Blues: Random
 Rotation+alpha=0, Oranges: PCA+alpha=1), shade + line style + marker = B (light/dotted/circle 1, medium/dashed/square 2,
 dark/solid/triangle 3). y = 80-100% (shared); x = log, 10 to 1.2 x the depth at which all six curves reach 99% (per panel, end value
 labelled); markers at 10 log-even integer depths per panel; grey dotted lines at 90/95/99%.

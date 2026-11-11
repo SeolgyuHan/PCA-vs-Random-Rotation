@@ -10,4 +10,9 @@ authors:
     affiliation: Graduate School of Data Science, Seoul National University
 repository-code: https://github.com/SeolgyuHan/PCA-vs-Random-Rotation
 license: Apache-2.0
-year: 2026
+date-released: "2026-11-11"
+keywords:
+  - approximate nearest neighbor search
+  - vector quantization
+  - principal component analysis
+  - bit allocation

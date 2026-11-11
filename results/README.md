@@ -13,7 +13,7 @@ Everything the paper prints is computed from these files by `numbers/make_number
 | `rerank/em_summary.csv` | Recall@10 without re-ranking and the candidates needed for 90/95/99% | `dataset, design, B, nq, recall_norerank, depth90, depth95, depth99` |
 | `guarantee/<ds>.csv` | coverage of the interval of Proposition 2 | `dataset, pair, B, seed, nominal, option, mask, s_bits, coverage, width_over_tau, frac_S_zero` |
 | `calc/<ds>.json`, `calc/table2.csv` | constants from the codecs (CG of the codec's PCA variances, CV², δ, A, correlation factor, Fig. 2 terms, S, predicted ratios) | see `experiments/calc/calc.py` |
-| `calc/exact_cg.json`, `calc/eig_u/<ds>.npy`, `calc/direction_stats.csv` | exact CG of Cov(u) over all rows (Table II), its eigenvalues, ‖E[u]‖² | |
+| `calc/exact_cg.json`, `calc/eig_u/<ds>.npy`, `calc/direction_stats.csv` | exact CG of Cov(u) over all rows (Table III), its eigenvalues, ‖E[u]‖² | |
 | `spectra/<ds>.csv` | per-component variances and B = 3 bit allocations of the three codecs (Fig. 2) | `basis, index, var, b3` |
 | `bigsets/fullscan/<ds>.csv`, `fullscan_budget/`, `fullscan_slope/` | the large datasets: Recall@10 at B = 3 (three arms), at other budgets, and at other slopes | as `fullscan/` plus `N, nq` |
 | `bigsets/score_error*/`, `bigsets/decomp*/`, `bigsets/calc/` | as above for the large datasets (`decomp/<ds>.a2.json`: the fitted A2 exponent) | |

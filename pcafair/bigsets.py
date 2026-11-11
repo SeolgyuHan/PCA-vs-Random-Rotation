@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Figures 1-3 and Table II on the kept datasets of 10M rows or more (sift100m, msmarco10m, msmarco113m) with L2 ground
+"""Figures 1-3 and Table III on the kept datasets of 10M rows or more (sift100m, msmarco10m, msmarco113m) with L2 ground
 truth and L2 scoring, under the frozen-codec protocol of the ten datasets (experiments/) unchanged.
 Shared pieces:
-  registry raw.fvecs, N, d, queries; the dataset mean mu and the PCA axes W of Cov(x) from the campaign's full pass
-             (bigsets_work/stats/<ds>-stats.npz), W re-orthonormalized in float64. Prepared coordinates = (x_raw - mu) W, as
+  registry raw.fvecs, N, d, queries; the dataset mean mu and the PCA axes W of Cov(x) from the statistics pass
+             ($PCARR_BIG_WORK/stats/<ds>-stats.npz, experiments/bigsets/big_stats.py), W re-orthonormalized in float64. Prepared coordinates = (x_raw - mu) W, as
              $PCARR_PREPARED/<ds>-db.npy holds them for the 1M datasets.
   reader contiguous chunks of the raw.fvecs by pread; each chunk's pages are dropped from the page cache afterwards
              (posix_fadvise DONTNEED), so the 433 GB stream does not evict the running experiments' cached files.
-  guards memory: below 6 GB available, wait until 9 GB; E7 window: while the chain is about to time the SIMD kernels
-             (E5 done, E7 not done, chain alive) or E7 runs, wait (at most 4 h after E5 finished), so nothing of ours runs then.
+  guards memory: below 6 GB available, wait until 9 GB; a file named STOP in $PCARR_BIG_WORK stops a pass at its next chunk.
   BigCodec a FairCodec fitted from the training sample (same rows: numpy default_rng(7), min(200k, 1.2e8/d) rows) and the
              full-database statistics of its coordinates (one streaming pass), then frozen exactly as freeze_codecs.py does."""
 import os, sys, time, json, glob
@@ -45,7 +44,9 @@ def log(msg):
 def spec(ds):
     """Registry entry plus mu (float64), W (float64, re-orthonormalized: polar factor of the campaign's float32 axes).
     Validation entries (big_validate.py) keep their own stats file in WORK."""
-    s = dict(SETS[ds]); sp = f'{WORK}/{ds}-stats.npz' if ds.startswith(('val_', 'pfx_')) else f'{STATS}/{ds}-stats.npz'; z = np.load(sp)
+    s = dict(SETS[ds]); sp = f'{WORK}/{ds}-stats.npz'
+    if not os.path.exists(sp): sp = f'{STATS}/{ds}-stats.npz'            # the published runs kept the full sets' statistics here
+    z = np.load(sp)
     assert int(z['N']) == s['N'] and int(z['d']) == s['d'], ds
     s['mu'] = z['mean'].astype(np.float64)
     U_, _, Vt = np.linalg.svd(z['W'].astype(np.float64)); s['W'] = U_ @ Vt

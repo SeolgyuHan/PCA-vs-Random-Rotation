@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-""" (Figure 2, Table II, checks): per large dataset, as results/calc_fair.py from the frozen codecs: CG(u) of the codec's PCA
+""" (Figure 2, Table III, checks): per large dataset, as results/calc_fair.py from the frozen codecs: CG(u) of the codec's PCA
 variances, CV^2, Haar deficit delta, original-coordinate gain A and correlation factor, Figure 2(a) variances / lambda_bar and 2(b)
 terms sigma_i^4 4^{-b_i} / (lambda_bar^2 4^{-3}) at B = 3, shape factor S_B = c0(rot)/c0(pca) of the score-error run and the
-predicted ratios; plus the exact CG of pass A (Table II convention, data/coding_gain_direction.py), S from the training-sample
-constants (c0_tr of the decomposition), the Table II row, and the ground-truth checks against the published lists
+predicted ratios; plus the exact CG of pass A (Table III convention, experiments/calc/direction_stats.py), S from the training-sample
+constants (c0_tr of the decomposition), the Table III row, and the ground-truth checks against the published lists
 (sift100m: big-ann official top-100; msmarco113m: Cohere's cosine top-1000; unit vectors, so the same order up to ties).
 Output results/calc/<ds>.json, results/table2_big.csv. Usage: python3 big_calc.py [ds,...] [--smoke]"""
 import os, sys, csv, json
@@ -41,7 +41,7 @@ def main(names, tag=''):
         bp = cp.alloc(3, 'alpha1'); br = cr.alloc(3, 'uniform'); lb = am(lam)
         tp = np.sort(np.asarray(cp.var, np.float64) ** 2 * 4.0 ** (-bp))[::-1] / (lb ** 2 * 4.0 ** -3)
         tr = np.sort(np.asarray(cr.var, np.float64) ** 2 * 4.0 ** (-br))[::-1] / (lb ** 2 * 4.0 ** -3)
-        info = dict(dataset=ds, N=int(pa['N']), d=d, nq=int(s['nq']), type_kr=s['type_kr'], CG_exact=round(float(pa['CG']), 4), CG_u=round(CG, 4),
+        info = dict(dataset=ds, N=int(pa['N']), d=d, nq=int(s['nq']), type=s['type'], CG_exact=round(float(pa['CG']), 4), CG_u=round(CG, 4),
                     log2CG_u=round(float(np.log2(CG)), 4), CG_x_campaign=round(float(np.mean(s['eig_x']) / np.exp(np.mean(np.log(s['eig_x'])))), 4),
                     CV2=round(cv2, 4), delta_haar=round(delta, 6), A_orig=round(A, 4), corr_factor=round(corr, 4),
                     corr_share_of_log2CG=round(float(np.log2(corr) / np.log2(CG)) if CG > 1 else 0.0, 4), ER2=float(pa['ER2']),
@@ -71,7 +71,7 @@ def main(names, tag=''):
             for r in csv.DictReader(open(fsn)): info[f'recall_B3_{r["piece"]}'] = float(r['recall_l2']); info[f'recall_tie_B3_{r["piece"]}'] = float(r['recall_l2_tie'])
         info.update(gt_check(ds, tag))
         json.dump(info, open(f'{OC}/{name}.json', 'w'))
-        rows.append({k: info.get(k, '') for k in ('dataset', 'N', 'd', 'nq', 'type_kr', 'CG_exact', 'CG_u', 'CG_x_campaign', 'S_tr_B3', 'S_B3', 'ratio_meas_B3',
+        rows.append({k: info.get(k, '') for k in ('dataset', 'N', 'd', 'nq', 'type', 'CG_exact', 'CG_u', 'CG_x_campaign', 'S_tr_B3', 'S_B3', 'ratio_meas_B3',
                                                     'ratio_pred_strict_B3', 'pred_err_bits_B3', 'recall_B3_orig', 'recall_B3_rot', 'recall_B3_pca',
                                                     'gt_check_mean_overlap_at10', 'a2_exponent')})
         B.log(f'calc {name}: ' + ', '.join(f'{k} {v}' for k, v in rows[-1].items() if k not in ('dataset',)))

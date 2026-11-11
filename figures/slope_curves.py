@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Table IV as a figure: Recall@10 at B = 3 against the slope alpha of the PCA allocation,
+"""The slope sweep as a figure: Recall@10 at B = 3 against the slope alpha of the PCA allocation,
 one panel per dataset, the ten datasets in CG order and then the three datasets of ten million rows or more (as in Table III).
 Ten datasets: results/fullscan/<ds>__pcaslope.csv (0-2, step 0.25) + <ds>__pcafine.csv (0.5-1.5, step 0.05), unified quantizer, strict
-recall_l2, all queries (the source of Table IV). Large datasets: results/bigsets/s7_slope.csv (slopes 0, 0.5, 1, 1.5, B = 3), plus
+recall_l2, all queries (the source of the slope_* keys of numbers.json). Large datasets: results/bigsets/s7_slope.csv (slopes 0, 0.5, 1, 1.5, B = 3), plus
 results/bigsets/fullscan_slope/<ds>__*.csv once a full scan of the finer slopes is done.
-Line = PCA at B = 3 (alpha = 1 from <ds>__pca.csv where the sweeps lack it, as in Table IV; markers on the 0.25 grid; the large datasets at their four slopes), grey dotted line = alpha = 1 (the theory),
-star = alpha* (Table IV's slope_<ds>_astar; for the large datasets the best of the four slopes). Per-panel y range: from the
+Line = PCA at B = 3 (alpha = 1 from <ds>__pca.csv where the sweeps lack it, as in the slope_* keys; markers on the 0.25 grid; the large datasets at their four slopes), grey dotted line = alpha = 1 (the theory),
+star = alpha* (slope_<ds>_astar of numbers.json; for the large datasets the best of the four slopes). Per-panel y range: from the
 multiple of 10 below the minimum to the multiple of 5 above the maximum (at most 100); titles carry the CG as in Figs. 1 and 3 (cg, one decimal). Fonts as in Fig. 3. Writes out/fig_slope_curves_l2.png/.pdf."""
 import csv, glob, numpy as np
 from common import order, cg, style, save, plt, L2, BIG, NUM, TEN
@@ -19,9 +19,9 @@ def curve(d):
         for piece in ('pcaslope', 'pcafine'):
             for r in csv.DictReader(open(f'{L2}/fullscan/{d}__{piece}.csv')):
                 if r['mode'] == 'unified' and r['B'] == '3': R[round(float(r['alpha']), 3)] = 100 * float(r['recall_l2'])
-        for r in csv.DictReader(open(f'{L2}/fullscan/{d}__pca.csv')):          # alpha = 1 from the main run, as in Table IV
+        for r in csv.DictReader(open(f'{L2}/fullscan/{d}__pca.csv')):          # alpha = 1 from the main run, as in the slope_* keys
             if r['mode'] == 'unified' and r['B'] == '3': R.setdefault(1.0, 100 * float(r['recall_l2']))
-        assert abs(R[1.0] - float(NUM[f'slope_{d}_r1']['v'])) <= 0.05 + 1e-9, (d, R[1.0])  # same R(1) as Table IV (half-up rounding there)
+        assert abs(R[1.0] - float(NUM[f'slope_{d}_r1']['v'])) <= 0.05 + 1e-9, (d, R[1.0])  # same R(1) as numbers.json (half-up rounding there)
     else:
         for r in csv.DictReader(open(f'{BIG}/s7_slope.csv')):
             if r['dataset'] == d: R[round(float(r['alpha']), 3)] = 100 * float(r['recall_l2'])
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     style(); fig, axs = plt.subplots(2, 7, figsize=(7.16, 3.55)); axs = axs.ravel(); CHK = {}
     for ax, d in zip(axs, DS):
         a, r = curve(d); best = r.max(); astar = min(a[r == best], key=lambda x: abs(x - 1))
-        if d in TEN: assert abs(astar - float(NUM[f'slope_{d}_astar']['v'])) < 1e-9, (d, astar)   # same alpha* as Table IV
+        if d in TEN: assert abs(astar - float(NUM[f'slope_{d}_astar']['v'])) < 1e-9, (d, astar)   # same alpha* as numbers.json
         CHK[d] = dict(n=len(a), astar=float(astar), r_astar=round(float(best), 1), r1=round(float(r[a == 1.0][0]), 1), r0=round(float(r[a == 0.0][0]), 1))
         ax.axvline(1.0, color='#999999', lw=0.8, ls=(0, (1.5, 1.5)), zorder=1)
         ax.plot(a, r, color=C, lw=1.1, zorder=3)

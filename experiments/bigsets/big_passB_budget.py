@@ -11,9 +11,9 @@ from concurrent.futures import ThreadPoolExecutor
 import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'); sys.path.insert(0, os.path.abspath(ROOT))
 from pcafair import bigsets as B  # noqa: E402
-import nu_taskq as NU  # noqa: E402
+from pcafair.topk import Top  # noqa: E402
 from threadpoolctl import threadpool_limits  # noqa: E402
-f = NU.f; K = 10; QB = 64; RULE = {'pca': ('alpha1', 1.0), 'rot': ('uniform', 0.0), 'orig': ('alpha1', 1.0)}
+K = 10; QB = 64; RULE = {'pca': ('alpha1', 1.0), 'rot': ('uniform', 0.0), 'orig': ('alpha1', 1.0)}
 FS = f'{B.OUT}/fullscan_budget'; os.makedirs(FS, exist_ok=True)
 FIELDS = ['dataset', 'piece', 'mode', 'B', 'alpha', 'recall_l2', 'recall_l2_tie', 'n_active', 'max_bits', 'realized_bits', 'N', 'nq']
 
@@ -30,7 +30,7 @@ def main(ds, arms, budgets, nthr, rmax):
         rule, a = RULE[arm]; c = B.BigCodec.load(f'{B.FROZEN}/codec_{ds}__{arm}.npz'); c.M32 = c.M.astype(np.float32) if c.M is not None else None
         Qa = c.qcoords(Qr if arm == 'orig' else Qp).astype(np.float32)
         for b in budgets:
-            bits = c.alloc(b, rule); pl = c.plan(bits); V[(arm, b)] = dict(c=c, bits=bits, pl=pl, z=c.dither(bits, 0), Qa=Qa, top=f.Top(nq, False), a=a)
+            bits = c.alloc(b, rule); pl = c.plan(bits); V[(arm, b)] = dict(c=c, bits=bits, pl=pl, z=c.dither(bits, 0), Qa=Qa, top=Top(nq, False, K), a=a)
     ck = f'{B.WORK}/{tag}-passB-budget.ckpt.npz'; z = B.load_ckpt(ck); pos = 0
     if z is not None:
         pos = int(z['pos'])

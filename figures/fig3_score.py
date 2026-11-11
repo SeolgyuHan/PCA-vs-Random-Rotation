@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """third line, original coordinates+α=1, from score_error_orig/.: the score error of the two designs against the bit
-budget, which replaces Table III (ratio of score errors) in V-A. Twelve panels in two rows of six, as Fig. 5 (slope): the ten datasets in CG
+budget, which replaces a table of score-error ratios in V-A. Twelve panels in two rows of six, as Fig. 5 (slope): the ten datasets in CG
 order, then sift100m and msmarco113m. Each panel
 plots the measured score error J (E2 protocol: within-query variance over 10,000 sampled database rows, averaged over queries; unified
 quantizer; one seed) of Random Rotation+alpha=0 and PCA+alpha=1 at B = 1-8 on a log axis.
@@ -8,7 +8,7 @@ Sources: <L2>/score_error/<ds>.csv (B 1, 2, 3, 4, 6, 8) + <L2>/score_error_b57/<
 folders under the large-dataset results.
 each panel's log axis is fitted to its own data (0.3-decade margins); before every panel spanned the same number of decades so that the gap and
 slopes compare across panels; the caption says so. Major ticks every second decade, a minor white grid line every decade.
-Checks (assert): eight budgets per dataset and design; J falls with every bit; the B = 3 ratio equals Table III's jratio_<ds>_b3; youtube is the
+Checks (assert): eight budgets per dataset and design; J falls with every bit; the B = 3 ratio equals the jratio_<ds>_b3 key of numbers.json_<ds>_b3; youtube is the
 only dataset where Random Rotation+alpha=0 is lower, at B >= 3; the four datasets with CG > 10 have a B = 3 ratio above 100.
 Writes out/fig_score_budget_l2.png/.pdf."""
 import csv, os
@@ -40,7 +40,7 @@ def checks(J):
             assert all(J[(d, z, b)] > J[(d, z, b + 1)] for b in BUDGETS[:-1]), (d, z, 'not monotone')
         assert all((d, 'orig', b) in J for b in BUDGETS), (d, 'orig')
         ratio3 = J[(d, 'rot', 3)] / J[(d, 'pca', 3)]; key = float(NUM[f'jratio_{d}_b3']['v'])
-        assert abs(ratio3 - key) <= (0.005 if key < 10 else 0.5) + 1e-9, (d, ratio3, key)      # same as Table III's cell
+        assert abs(ratio3 - key) <= (0.005 if key < 10 else 0.5) + 1e-9, (d, ratio3, key)      # same as the jratio key
         lower = [b for b in BUDGETS if J[(d, 'pca', b)] < J[(d, 'rot', b)]]
         assert lower == ([1, 2] if d == 'youtube' else list(BUDGETS)), (d, lower)               # the caption's first sentence
         if d in TEN and cg(d) > 10: assert ratio3 > 100, (d, ratio3)                            # "less than a hundredth"

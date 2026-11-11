@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Exact statistics of the direction u = x / ||x|| over all database rows of a prepared dataset (x = the prepared row, centered on
-the database mean): the eigenvalues of Cov(u) in float64, the coding gain CG = AM / GM of those eigenvalues (Table II), and
+the database mean): the eigenvalues of Cov(u) in float64, the coding gain CG = AM / GM of those eigenvalues (Table III), and
 ||E[u]||^2 (the term that Assumption 5 drops). Every component is kept, near-null ones included (mnist keeps 712 components;
 without its six components below 1e-6 of the mean its CG would be 28.8 instead of 31.6), and no floor is applied.
 Writes $PCARR_OUT/calc/direction_stats.csv and $PCARR_OUT/calc/eig_u/<dataset>.npy (eigenvalues, descending).

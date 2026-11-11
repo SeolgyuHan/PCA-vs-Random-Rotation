@@ -4,7 +4,7 @@
     python3 numbers/make_numbers.py            # recompute, compare with numbers/numbers.json, exit 1 on any difference
     python3 numbers/make_numbers.py --write    # recompute and rewrite numbers/numbers.json (value and rule per key)
 
-Keys: cg_<ds> (Table II), b3_* / rot_below_orig_count / orig_even_pca_gain_count / rec_b3_hicg_dpp_* (Section V-A, Fig. 1),
+Keys: cg_<ds> (Table III), b3_* / rot_below_orig_count / orig_even_pca_gain_count / rec_b3_hicg_dpp_* (Section V-A, Fig. 1),
 jr_* and jratio_<ds>_b<B> (Fig. 3 and its checks), det_* / rot_det_* / adv_<ds>_drecall (dither, Sections IV and V-D, Table IV),
 pca_inactive_b3_count, corr_share_* / openai1536_* (Section V-A), eu_norm2_max (Assumption 5), big_* / s3_* (large datasets),
 slope_* (Section V-C, Fig. 5), rr_* (Section V-B, Fig. 4), guar_miss_<ds>_<level> (Table IV)."""
@@ -53,7 +53,7 @@ HI = [d for d in TEN if CG[d] > 10]                  # the datasets with CG abov
 EVEN = [d for d in TEN if EXACT[d]['A_orig'] < 1.2]  # original-coordinate variances nearly even: allocation gain of those coordinates below 1.2
 assert sorted(EVEN) == sorted(['youtube', 'word2vec', 'openai1536', 'msmarco', 'openai3072', 'gist']), EVEN
 
-# ------------------------------------------------------------------ Table II, Section V-A
+# ------------------------------------------------------------------ Table III, Section V-A
 for d in TEN + LARGE: put(f'cg_{d}', f'{CG[d]:.2f}', 'coding gain, exact eigenvalues of Cov(u) over all database rows (results/calc/exact_cg.json; large datasets results/bigsets/calc)')
 put('cg_min', f'{min(CG[d] for d in TEN):.2f}', 'smallest CG of the ten datasets'); put('cg_max', f'{max(CG[d] for d in TEN):.1f}', 'largest CG of the ten datasets')
 rec3 = [d for d in TEN if REC[(d, 'pca', 'unified', 3)] > REC[(d, 'rot', 'unified', 3)]]

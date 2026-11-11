@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" E3 (Figure 2, Table II, numbers of Sections I and III-C) from the frozen codecs.
+""" E3 (Figure 2, Table III, numbers of Sections I and III-C) from the frozen codecs.
 Per dataset: eigenvalues lambda(u) (PCA codec variances, descending), rotated-basis variances, original-coordinate variances v(u);
 CG(u) = AM(lambda)/GM(lambda), log2 CG, CV^2, Haar deficit delta = 2 CV^2/(d + 2); original-coordinate allocation gain
 A = AM(v)/GM(v) and correlation factor GM(v)/GM(lambda) (share of log2 CG); Figure 2(b) terms at B = 3: sigma_i^4 4^{-b_i} for both

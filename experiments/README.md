@@ -25,12 +25,13 @@ published files; `tests/compare_dir.py <dir>` compares the two trees. The frozen
 
 ## The large datasets (`bigsets/`, raw `.fvecs` streams, `data/README.md` §3)
 
-`bash experiments/bigsets/run_big.sh` runs, per group (sift100m; msmarco = msmarco10m prefix + msmarco113m): `big_passA.py` (one
+`bash experiments/bigsets/run_big.sh` runs, per group (sift100m; msmarco = msmarco10m prefix + msmarco113m): `big_stats.py` (the
+mean and the PCA axes of the raw stream, one pass) → `big_passA.py` (one
 streaming pass: exact L2 top-100 ground truth, exact Cov(u), and the codec statistics; checkpoints every ten minutes) →
 `big_freeze.py` (the three codecs) → `big_passB.py` (Recall@10 at B = 3) → `big_score.py` (score error and its decomposition) →
-`big_calc.py` (constants, Table II row). Other budgets: `big_passB_budget.py <ds> --arms pca,rot,orig --B 1,2,4,6,8`; other slopes:
+`big_calc.py` (constants, Table III row). Other budgets: `big_passB_budget.py <ds> --arms pca,rot,orig --B 1,2,4,6,8`; other slopes:
 `big_passB_slope.py <group> --alphas ...` and `big_s7_summary.py`; prefixes of the streams as datasets of their own (Section V-A):
-`big_prefix_stats.py`, `big_s3_summary.py`; encoding cost: `big_s6_cost.py`. The passes use the C kernels of `csrc/` (`make -C csrc`)
+`big_stats.py pfx_sift1m pfx_sift10m pfx_msmarco1m` and the same passes, then `big_s3_summary.py`; encoding cost: `big_s6_cost.py`. The passes use the C kernels of `csrc/` (`make -C csrc`)
 through `pcafair/bigkern.py`. `big_validate.py` runs the large-dataset pipeline on audio and checks it against the ten-dataset
 results. Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
 cached training samples.

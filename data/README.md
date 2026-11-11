@@ -55,8 +55,8 @@ count; the eigenvalues and the ground truth are the quantities to check first. P
 
 ## 3. The large datasets (sift100m, msmarco10m, msmarco113m)
 
-The passes of `experiments/bigsets/` stream the raw `.fvecs` files; nothing is prepared in advance (the mean, the PCA axes and the
-codecs come from one streaming pass, `big_passA.py`).
+The passes of `experiments/bigsets/` stream the raw `.fvecs` files; nothing is prepared in advance. `big_stats.py` computes the mean
+and the PCA axes of the stream, `big_passA.py` the ground truth and the codec statistics, and `big_freeze.py` the codecs.
 
 | Dataset | Source | How | N | d | Queries |
 |---|---|---|---|---|---|
@@ -68,7 +68,7 @@ Files: `$PCARR_BIG_RAW/SIFT100M/{base.100M.fvecs, query.10K.fvecs}` (48 GB) and 
 (434 GB). The ground truth (exact L2 top-100, re-sorted in float64) is computed by `big_passA.py` itself; the Cohere embeddings have
 unit norm, so their L2, cosine, and inner-product rankings coincide.
 
-## 4. Coding gain (Table II)
+## 4. Coding gain (Table III)
 
 CG = AM(λ)/GM(λ) over the exact eigenvalues λ of Cov(u), the covariance of the direction u = x/||x|| of every prepared database row,
 float64, all components kept (mnist keeps 712; without its six components below 1e-6 of the mean its CG would be 28.8 instead of

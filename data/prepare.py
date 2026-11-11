@@ -261,7 +261,7 @@ def prep_dataset(name, source_dir, output_dir, n_query=DEFAULT_NQ, topk=TOPK, se
     except ImportError:
         gt = None; print("\n[5/5] faiss not installed: skipping the inner-product ground truth (the paper uses data/gt_l2.py)")
     cg = compute_cg(eigvals)
-    print(f"      CG of Cov(x) = {cg:.6f}   log2(CG) = {np.log2(cg):.6f}   (Table II uses Cov(u): experiments/calc/direction_stats.py)")
+    print(f"      CG of Cov(x) = {cg:.6f}   log2(CG) = {np.log2(cg):.6f}   (Table III uses Cov(u): experiments/calc/direction_stats.py)")
 
     np.save(out_dir / f"{name}-db.npy", db_pca)
     np.save(out_dir / f"{name}-query.npy", q_pca)

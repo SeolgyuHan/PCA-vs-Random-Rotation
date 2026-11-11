@@ -3,12 +3,12 @@
   (1) the exact L2 ground truth: top-100 per query by 2<q, x> - ||x||^2 over the raw rows (float32 scan), the 100 candidates then
       re-sorted by the float64 distance (ties by id); prefix snapshots at the cuts (sift100m 1M, 10M; msmarco113m 1M, 10M);
   (2) the exact Cov(u) over all rows (float64), u = p / ||p||, p = the prepared row ((x - mu) W rounded to float32, as the 1M
-      datasets' $PCARR_PREPARED/<ds>-db.npy) -> the eigenvalues and CG of Table II (as data/coding_gain_direction.py);
+      datasets' $PCARR_PREPARED/<ds>-db.npy) -> the eigenvalues and CG of Table III (as experiments/calc/direction_stats.py);
   (3) min, max, sum, sum of squares over all rows of the coding coordinates of the three codecs, the database statistics of
       FairCodec.fit: pca u M_pca (M_pca = eigenvectors of Cov(u) on the training sample), rot u H (H = haar_fullscan(d, 0)),
       orig (x - mu)/||x - mu|| in the raw coordinates.
 Stage 1 before the pass (cached): the training sample rows (numpy default_rng(7), min(200k, 1.2e8/d) of N) and M_pca.
-Checkpoints about every 10 minutes (resume from them). Guards of pcafair.bigsets (memory; E7 window) between chunks.
+Checkpoints about every 10 minutes (resume from them). Memory guard of pcafair.bigsets between chunks.
 Usage: python3 big_passA.py <group> [--rows-max R] (R: smoke test on the first R rows only, outputs tagged.smoke)"""
 import os, sys, time
 import numpy as np
@@ -78,7 +78,7 @@ def main(grp, rmax=None):
                 s = S[nm]
                 if row0 >= s['N']: continue
                 Up, Rp, Ur, Rr = B.prepared(s, X); R_ = D[nm]
-                U64 = Up.astype(np.float64)                                          # exact Cov(u) in float64 (Table II CG)
+                U64 = Up.astype(np.float64)                                          # exact Cov(u) in float64 (Table III CG)
                 R_['sR2'] += float(np.dot(Rp, Rp)); R_['su'] += U64.sum(0); R_['suu'] = dsyrk(1.0, U64.T, beta=1.0, c=R_['suu'], trans=0, lower=0, overwrite_c=1); del U64
                 Yp = Up @ st1[nm]['Mp32']; Yr = Up @ st1[nm]['H32']; del Up
                 list(pool.map(lambda bY: R_['acc'][bY[0]].add(bY[1]), (('orig', Ur), ('pca', Yp), ('rot', Yr)))); del Ur, Yp, Yr
