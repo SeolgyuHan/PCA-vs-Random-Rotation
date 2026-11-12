@@ -18,7 +18,7 @@ published files; `tests/compare_dir.py <dir>` compares the two trees. The frozen
 | 3 | `calc/calc.py` | per-dataset constants from the codecs: CG of the codec's PCA variances, CV², Haar deficit δ, allocation gain A and correlation factor of the original coordinates, the Fig. 2 terms, the shape factor S | `calc/<ds>.json`, `calc/table2.csv` |
 | 3b | `calc/direction_stats.py`, `calc/export_spectra.py` | exact Cov(u) eigenvalues, CG and ‖E[u]‖² from the prepared data; the per-component variances and B = 3 allocations of the codecs (the inputs of Fig. 2) | `calc/direction_stats.csv`, `calc/eig_u/`, `spectra/<ds>.csv` |
 | 4 | `rerank/rerank_ranks.py [ds,...] [pca,rot]` | the rank of every true neighbor in the code ranking of a full scan at B = 1–8 (from which Recall@10 after re-scoring the top W is exact for every W ≥ 10) | `rerank/<ds>__<design>.npz`, `rerank/em_summary.csv` |
-| 5 | `guarantee/guarantee.py [ds,...]` | coverage of the data-independent interval (Proposition 2) at nominal 95, 99, 99.9%: first 20,000 database rows × first 200 queries, dither seeds 0–4, B = 1–8, residual size in 2–4 bits | `guarantee/<ds>.csv` |
+| 5 | `guarantee/guarantee.py [ds,...]` | coverage of the data-independent interval (Proposition 2, over all components: the components without bits enter the residual) at nominal 95, 99, 99.9%: first 20,000 database rows × first 200 queries, dither seeds 0–4, B = 1–8, residual size in 2–4 bits | `guarantee/<ds>.csv` |
 
 `bash tests/parity_audio.sh` runs steps 0–5 on audio (the smallest dataset) into `work/parity/` and compares every file with
 `results/`.
@@ -30,7 +30,7 @@ mean and the PCA axes of the raw stream, one pass) → `big_passA.py` (one
 streaming pass: exact L2 top-100 ground truth, exact Cov(u), and the codec statistics; checkpoints every ten minutes) →
 `big_freeze.py` (the three codecs) → `big_passB.py` (Recall@10 at B = 3) → `big_score.py` (score error and its decomposition) →
 `big_calc.py` (constants, Table III row). Other budgets: `big_passB_budget.py <ds> --arms pca,rot,orig --B 1,2,4,6,8`; other slopes:
-`big_passB_slope.py <group> --alphas ...` and `big_s7_summary.py`; prefixes of the streams as datasets of their own (Section V-A):
+`big_passB_slope.py <group> --alphas ...` and `big_s7_summary.py` (a long pass can be split into disjoint row ranges run in parallel, `--rows r0:r1` each, and joined with `--merge`); prefixes of the streams as datasets of their own (Section V-A):
 `big_stats.py pfx_sift1m pfx_sift10m pfx_msmarco1m` and the same passes, then `big_s3_summary.py`; encoding cost: `big_s6_cost.py`. The passes use the C kernels of `csrc/` (`make -C csrc`)
 through `pcafair/bigkern.py`. `big_validate.py` runs the large-dataset pipeline on audio and checks it against the ten-dataset
 results (`results/bigsets/validation/validate_audio.json`: the codec parameters agree to 1e-5 (the variances to 1e-9), Recall@10 to 0.05 pp, the score error to 1e-4). Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
