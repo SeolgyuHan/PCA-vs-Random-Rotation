@@ -6,8 +6,8 @@ only in the basis and the bit allocation. This page lists what the paper's Secti
 
 ## Coordinates
 
-- `x`: a prepared database row (centered on the database mean; see `data/README.md`). The code stores its norm `R = ||x||` exactly and
-  quantizes the direction `u = x / R`.
+- `x`: a prepared database row (centered on the database mean; see `data/README.md`). The code keeps its norm `R = ||x||` unquantized (float64 here;
+  a 32-bit float in the paper's design) and quantizes the direction `u = x / R`.
 - Basis `M` of the coding coordinates `y = M^T u`: `pca`, the eigenvectors of Cov(u) on the training sample (descending); `rot`, a dense
   Haar rotation (`pcafair.engine.haar_fullscan(d, 0)`: QR of a Gaussian matrix with seed 1000, signs of the diagonal of R folded into Q);
   `orig`, the identity (the original coordinates, the raw rows centered by the raw mean, constant coordinates removed).
@@ -56,7 +56,8 @@ The reconstruction is affine in the integer code, `u_hat_i = a_i + w_i k_i`, whi
 
 `codec_<dataset>__<basis>.npz`: `M` (basis), `mn`, `mx` (database range), `var` (database variances of the coding coordinates), `rlo`,
 `rhi` (selected ranges per bit count), `a`, `w` (affine reconstruction), `curve` (error curves), `R` (norms of all rows), `N`, `c0`,
-`A_fix`, `g_fix` (fixed gains), and for the original coordinates `mu_raw`, `act_raw`. `experiments/codec/freeze_codecs.py` fits and
+`A_fix`, `g_fix` (fixed gains), `vro` (the design's per-bit round-off error curves), `wq` (per-component query weights, a copy of `var` in the
+published codecs), `meta` (fitting metadata), and for the original coordinates `mu_raw`, `act_raw`. `experiments/codec/freeze_codecs.py` fits and
 saves them (deterministic given the prepared data); `results/spectra/<dataset>.csv` exports the variances and the B = 3 allocations
 that Fig. 2 draws.
 

@@ -70,7 +70,7 @@ unit norm, so their L2, cosine, and inner-product rankings coincide.
 
 ## 4. Coding gain (Table III)
 
-CG = AM(λ)/GM(λ) over the exact eigenvalues λ of Cov(u), the covariance of the direction u = x/||x|| of every prepared database row,
+CG = AM(λ)/GM(λ) over the exact eigenvalues λ of Cov(u), the covariance of the direction u = x/||x|| of every prepared (centered) database row,
 float64, all components kept (mnist keeps 712; without its six components below 1e-6 of the mean its CG would be 28.8 instead of
 31.6) and no floor. `python3 experiments/calc/direction_stats.py` recomputes it (`results/calc/direction_stats.csv`,
 `results/calc/eig_u/`); the paper's values are `results/calc/exact_cg.json`. For the large datasets `big_passA.py` computes the same

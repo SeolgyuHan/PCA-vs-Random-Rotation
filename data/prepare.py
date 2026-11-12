@@ -11,8 +11,8 @@ Reads $PCARR_RAW/<name>/<name>_{base,query}.fvecs and writes to $PCARR_PREPARED:
   {name}-query.npy queries in PCA coordinates (float32)
   {name}-gt-ip.npy exact top-10 by centered inner product (int32, faiss IndexFlatIP)
   {name}-eigenvalues.npy eigenvalues, descending (float32)
-  {name}-pca-basis.npy PCA basis W (float32, d_raw x d), db = (x - mean) @ W [not written by the published runs]
-  {name}-mean.npy database mean (float64) [not written by the published runs]
+  {name}-pca-basis.npy PCA basis W (float32, d_raw x d), db = (x - mean) @ W [written by this script; the published runs did not keep it]
+  {name}-mean.npy database mean (float64) [written by this script; the published runs did not keep it]
 
 Pipeline:
   1. Read fvecs (base + query); msmarco keeps the first 1,000,000 base rows; queries capped at 1,000 (mnist: 10,000).

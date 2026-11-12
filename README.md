@@ -36,7 +36,7 @@ numbers/        make_numbers.py recomputes every number printed in the paper; nu
 figures/        fig1_recall.py ... fig5_slope.py (+ common.py, slope_curves.py); published/ holds the paper's PNG/PDF
 experiments/    the measurement scripts (README.md: protocols, order, outputs); bigsets/ for the large datasets
 data/           dataset recipes: download/convert, prepare.py (centering, PCA), gt_l2.py (exact L2 top-100), big_*.py
-docs/           proofs.md (full proofs of Lemma 1, Propositions 1 and 2, the Haar deficit), quantizer.md (ranges, dither, gains)
+docs/           proofs.md (Lemma 1, Propositions 1 and 2 with the step to the score, the dither facts, the Haar deficit), quantizer.md (ranges, dither, gains)
 tests/          check_results.py (results layer), parity_audio.sh + compare_dir.py (experiment layer, end to end on audio)
 csrc/           bigkern.cpp, the top-k filtering kernels of the streaming passes (make -C csrc)
 ```
@@ -62,12 +62,12 @@ csrc/           bigkern.cpp, the top-k filtering kernels of the streaming passes
    with `results/`).
 3. The ten datasets: `experiments/README.md`, steps 0–5. The frozen codecs are deterministic given the prepared data (training sample
    `numpy.random.default_rng(7)`); the ones of the paper are also attached to the GitHub release as `frozen_codecs.tar.gz`
-   (39 files, 479 MB; unpack into `$PCARR_FROZEN`).
+   (39 codecs, 78 files, 479 MB; unpack into `$PCARR_FROZEN`).
 4. The large datasets: `data/README.md` §3 for the raw files, then `make -C csrc` and `bash experiments/bigsets/run_big.sh`.
 
 ## The design in a few sentences
 
-Both designs store the norm of each vector exactly and quantize its direction u = x/‖x‖, one uniform scalar quantizer per component
+Both designs keep the norm of each prepared (centered) vector unquantized, in float64 in the code and as a 32-bit float in the paper's design, and quantize its direction u = x/‖x‖, one uniform scalar quantizer per component
 (`docs/quantizer.md`). The cells of a component cover a range chosen among quantile candidates of a training sample. Components with
 at least 2 bits use shared subtractive dither with a fixed gain; 1-bit components use a gain-corrected split; components without bits
 are set to their mean. Random Rotation+α=0 rotates by a dense Haar matrix and gives every component B bits. PCA+α=1 uses the PCA basis

@@ -33,13 +33,13 @@ streaming pass: exact L2 top-100 ground truth, exact Cov(u), and the codec stati
 `big_passB_slope.py <group> --alphas ...` and `big_s7_summary.py` (a long pass can be split into disjoint row ranges run in parallel, `--rows r0:r1` each, and joined with `--merge`); prefixes of the streams as datasets of their own (Section V-A):
 `big_stats.py pfx_sift1m pfx_sift10m pfx_msmarco1m` and the same passes, then `big_s3_summary.py`; encoding cost: `big_s6_cost.py`. The passes use the C kernels of `csrc/` (`make -C csrc`)
 through `pcafair/bigkern.py`. `big_validate.py` runs the large-dataset pipeline on audio and checks it against the ten-dataset
-results (`results/bigsets/validation/validate_audio.json`: the codec parameters agree to 1e-5 (the variances to 1e-9), Recall@10 to 0.05 pp, the score error to 1e-4). Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
+results (`results/bigsets/validation/validate_audio.json`: the codec parameters agree to 1e-5 (the variances to 1e-8), Recall@10 to 0.05 pp, the score error to 2e-4). Expect hours per pass on sift100m and a day or more on msmarco113m; `$PCARR_BIG_WORK` holds the checkpoints and the
 cached training samples.
 
 ## Conventions shared by all scripts
 
 - Random Rotation+α=0: dense Haar rotation `haar_fullscan(d, 0)` (`pcafair/engine.py`), B bits in every component.
-  PCA+α=1: PCA of u = x/‖x‖ on the training sample, bits `max(0, log2 σ_i² + c)` summing to B·d (cap 24 bits).
+  PCA+α=1: PCA of u = x/‖x‖ of the prepared (centered) rows on the training sample, bits `max(0, log2 σ_i² + c)` summing to B·d (cap 24 bits).
 - The same quantizer for both designs (`docs/quantizer.md`): shared subtractive dither (seed 0) with fixed gains for components with
   at least 2 bits, a gain-corrected split for 1-bit components, the mean for components without bits.
 - Score: ‖x‖² − 2‖x‖⟨q̃, û⟩ with the stored norm; Recall@10 against the exact L2 top-10; queries are not quantized.
