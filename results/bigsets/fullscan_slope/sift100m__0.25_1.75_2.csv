@@ -1,0 +1,4 @@
+dataset,piece,mode,B,alpha,recall_l2,recall_l2_tie,n_active,max_bits,realized_bits,N,nq
+sift100m,pcaslope,unified,3,0.25,0.4276,0.4276,128,4,384,100000000,1000
+sift100m,pcaslope,unified,3,1.75,0.703,0.7031,91,12,384,100000000,1000
+sift100m,pcaslope,unified,3,2.0,0.6766,0.6767,84,13,384,100000000,1000

@@ -4,7 +4,8 @@ quantizer, dither seed 0, score R^2 - 2 R <q~, u_hat>, per-query top-10, strict 
 truth), but every arm is the frozen PCA codec of the dataset with the allocation of Eq. (2) at another slope: 'alpha1' for 1.0
 (the pca arm of big_passB.py, used to validate), 'alpha<a>' otherwise. One codec and one projection per dataset feed all arms.
 Checkpoint {WORK}/<group>-passB-slope-<alphas>.ckpt.npz; output results/fullscan_slope/<ds>__<alphas>.csv + ids_<ds>__<alphas>.npz.
-Usage: python3 big_passB_slope.py <group> [--alphas 0.0,0.5,1.5]"""
+Usage: python3 big_passB_slope.py <group> [--alphas 0.0,0.5,1.5] [--rows r0:r1 | --merge]   (G1566: disjoint row ranges run in
+parallel, each with its own checkpoint; --merge joins their per-query top-k and writes the csv)"""
 import os, sys, csv, time
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
@@ -30,7 +31,7 @@ def threads_now():
 def rule_of(a): return 'alpha1' if a == 1.0 else f'alpha{a}'
 
 
-def main(grp, alphas):
+def main(grp, alphas, rows=None, merge=False):
     names = B.GROUPS[grp]; S = {n: B.spec(n) for n in names}; atag = '_'.join(f'{a:g}' for a in alphas)
     d = S[names[0]]['d']; base = S[names[0]]['base']; Nmax = max(S[n]['N'] for n in names); CH = B.chunk_rows(d) // (2 if d <= 256 else 1)
     Q = B.read_queries(S[names[0]]); nq = len(Q)
@@ -42,14 +43,27 @@ def main(grp, alphas):
         for a in alphas:
             bits = c.alloc(3, rule_of(a)); pl = c.plan(bits)
             V[(n, a)] = dict(bits=bits, pl=pl, z=c.dither(bits, 0), Qa=Qa, top=Top(nq, False, K))
-    ck = f'{B.WORK}/{grp}-passB-slope-{atag}.ckpt.npz'; z = B.load_ckpt(ck); pos = 0
+    ck = f'{B.WORK}/{grp}-passB-slope-{atag}.ckpt.npz'
+    if rows is not None: ck = f'{B.WORK}/{grp}-passB-slope-{atag}-rows{rows[0]}-{rows[1]}.ckpt.npz'   # G1566: a row range [r0, r1) of the stream, merged later with --merge
+    if merge:                                                                       # G1566: merge the row-range checkpoints of this group/atag and finish
+        import glob
+        parts = sorted(glob.glob(f'{B.WORK}/{grp}-passB-slope-{atag}-rows*.ckpt.npz'))
+        assert parts, 'no row-range checkpoints to merge'
+        for (n, a), v in V.items():
+            ss = np.concatenate([np.load(f)[f'{n}|{a:g}|s'] for f in parts], 1); ii = np.concatenate([np.load(f)[f'{n}|{a:g}|i'] for f in parts], 1)
+            order = np.argsort(ss, axis=1, kind='stable')[:, :K]; v['top'].s[:] = np.take_along_axis(ss, order, 1); v['top'].i[:] = np.take_along_axis(ii, order, 1)
+            assert np.isfinite(v['top'].s).all(), (n, a, 'a query has fewer than K finite scores after the merge')
+        B.log(f'S7 pass B slope {grp}: merged {len(parts)} row-range checkpoints ' + ', '.join(os.path.basename(f) for f in parts))
+        pos = Nmax; t0 = time.time(); pool = None
+    z = None if merge else B.load_ckpt(ck); pos = pos if merge else 0
     if z is not None:
         pos = int(z['pos'])
         for (n, a), v in V.items(): v['top'].s[:] = z[f'{n}|{a:g}|s']; v['top'].i[:] = z[f'{n}|{a:g}|i']
+    if rows is not None: pos = max(pos, rows[0]); Nmax = min(Nmax, rows[1])
     cuts = sorted(set(S[n]['N'] for n in names)); t0 = time.time(); last = time.time(); nthr = threads_now()
     B.log(f'S7 pass B slope {grp}: start at row {pos:,} of {Nmax:,} (slopes {atag}, {len(V)} arms, {nq} queries, threads {nthr})')
     pool = ThreadPoolExecutor(max_workers=16); threadpool_limits(limits=nthr)
-    for row0, X in B.iter_chunks(base, d, pos, Nmax, CH, cuts):
+    for row0, X in ([] if merge else B.iter_chunks(base, d, pos, Nmax, CH, cuts)):
         B.gate(f'S7 pass B slope {grp}')
         if threads_now() != nthr: nthr = threads_now(); threadpool_limits(limits=nthr); B.log(f'S7 pass B slope {grp}: threads {nthr}')
         n = X.shape[0]
@@ -71,6 +85,10 @@ def main(grp, alphas):
             for (nm, a), v in V.items(): arr[f'{nm}|{a:g}|s'] = v['top'].s; arr[f'{nm}|{a:g}|i'] = v['top'].i
             B.save_ckpt(ck, **arr); last = time.time(); print(f'  S7 pass B slope {grp}: {pos:,}/{Nmax:,} rows [{time.time()-t0:.0f}s]', flush=True)
     pool.shutdown()
+    if rows is not None:
+        arr = dict(pos=np.array(pos))
+        for (nm, a), v in V.items(): arr[f'{nm}|{a:g}|s'] = v['top'].s; arr[f'{nm}|{a:g}|i'] = v['top'].i
+        B.save_ckpt(ck, **arr); B.log(f'S7 pass B slope {grp}: rows {rows[0]:,}-{rows[1]:,} done [{time.time()-t0:.0f}s]'); return
     for nm in names:
         s = S[nm]; gt = np.load(f'{B.OUT}/{nm}-gt-l2.npy')[:, :K]; thr = np.load(f'{B.OUT}/{nm}-gt-l2-dist.npy')[:, K - 1]
         Q64 = Q.astype(np.float64); rows, ids_all = [], {}
@@ -90,4 +108,5 @@ def main(grp, alphas):
 
 if __name__ == '__main__':
     al = sys.argv[sys.argv.index('--alphas') + 1] if '--alphas' in sys.argv else '0.0,0.5,1.5'
-    main(sys.argv[1], [float(x) for x in al.split(',')])
+    rows = tuple(int(x) for x in sys.argv[sys.argv.index('--rows') + 1].split(':')) if '--rows' in sys.argv else None   # G1566: --rows r0:r1
+    main(sys.argv[1], [float(x) for x in al.split(',')], rows=rows, merge='--merge' in sys.argv)
