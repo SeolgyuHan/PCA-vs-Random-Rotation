@@ -61,8 +61,10 @@ csrc/           bigkern.cpp, the top-k filtering kernels of the streaming passes
 2. End-to-end check on the smallest dataset: `bash tests/parity_audio.sh` (fits the codecs, runs every experiment on audio, compares
    with `results/`).
 3. The ten datasets: `experiments/README.md`, steps 0–5. The frozen codecs are deterministic given the prepared data (training sample
-   `numpy.random.default_rng(7)`); the ones of the paper are also attached to the GitHub release as `frozen_codecs.tar.gz`
-   (39 codecs, 78 files, 479 MB; unpack into `$PCARR_FROZEN`).
+   `numpy.random.default_rng(7)`); the ones of the paper are also attached to the
+   [GitHub release](https://github.com/SeolgyuHan/PCA-vs-Random-Rotation/releases/tag/icde2027-submission) as
+   [`frozen_codecs.tar.gz`](https://github.com/SeolgyuHan/PCA-vs-Random-Rotation/releases/download/icde2027-submission/frozen_codecs.tar.gz)
+   (39 codecs, 78 files, 479 MB; checksum in `frozen_codecs.sha256`; unpack into `$PCARR_FROZEN`).
 4. The large datasets: `data/README.md` §3 for the raw files, then `make -C csrc` and `bash experiments/bigsets/run_big.sh`.
 
 ## The design in a few sentences
